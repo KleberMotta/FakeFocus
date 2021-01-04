@@ -469,5 +469,6 @@ namespace UniversalSplitScreen.UI
 		{
 			Program.SplitScreenManager.MoveWindow(WindowPosition.BottomRight);
 		}
+
 	}
 }

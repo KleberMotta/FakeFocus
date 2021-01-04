@@ -38,18 +38,18 @@
             this.stopButton = new System.Windows.Forms.Button();
             this.resetAllButton = new System.Windows.Forms.Button();
             this.activeWindowPanel = new System.Windows.Forms.Panel();
-            this.Label_CurrentWindowTabInstructions = new System.Windows.Forms.Label();
-            this.windowTitleBox = new System.Windows.Forms.GroupBox();
-            this.windowTitleLabel = new System.Windows.Forms.Label();
-            this.hwndBox = new System.Windows.Forms.GroupBox();
-            this.hWndLabel = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonOptions_New = new System.Windows.Forms.Button();
             this.buttonOptions_load = new System.Windows.Forms.Button();
             this.buttonOptions_save = new System.Windows.Forms.Button();
             this.buttonOptions_delete = new System.Windows.Forms.Button();
             this.optionsComboBox = new System.Windows.Forms.ComboBox();
+            this.Label_CurrentWindowTabInstructions = new System.Windows.Forms.Label();
+            this.windowTitleBox = new System.Windows.Forms.GroupBox();
+            this.windowTitleLabel = new System.Windows.Forms.Label();
+            this.hwndBox = new System.Windows.Forms.GroupBox();
+            this.hWndLabel = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Label_AutofillHandleName = new System.Windows.Forms.Label();
             this.endButtonSetter = new System.Windows.Forms.Button();
@@ -161,10 +161,10 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.activeWindowPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.windowTitleBox.SuspendLayout();
             this.hwndBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.hooksBox.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -277,6 +277,7 @@
             // activeWindowPanel
             // 
             this.activeWindowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.activeWindowPanel.Controls.Add(this.panel2);
             this.activeWindowPanel.Controls.Add(this.Label_CurrentWindowTabInstructions);
             this.activeWindowPanel.Controls.Add(this.windowTitleBox);
             this.activeWindowPanel.Controls.Add(this.hwndBox);
@@ -284,6 +285,64 @@
             this.activeWindowPanel.Name = "activeWindowPanel";
             this.activeWindowPanel.Size = new System.Drawing.Size(759, 406);
             this.activeWindowPanel.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.buttonOptions_New);
+            this.panel2.Controls.Add(this.buttonOptions_load);
+            this.panel2.Controls.Add(this.buttonOptions_save);
+            this.panel2.Controls.Add(this.buttonOptions_delete);
+            this.panel2.Controls.Add(this.optionsComboBox);
+            this.panel2.Location = new System.Drawing.Point(19, 84);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(720, 30);
+            this.panel2.TabIndex = 10;
+            // 
+            // buttonOptions_New
+            // 
+            this.buttonOptions_New.Location = new System.Drawing.Point(402, 3);
+            this.buttonOptions_New.Name = "buttonOptions_New";
+            this.buttonOptions_New.Size = new System.Drawing.Size(75, 23);
+            this.buttonOptions_New.TabIndex = 12;
+            this.buttonOptions_New.Text = "New";
+            this.buttonOptions_New.UseVisualStyleBackColor = true;
+            // 
+            // buttonOptions_load
+            // 
+            this.buttonOptions_load.Location = new System.Drawing.Point(483, 4);
+            this.buttonOptions_load.Name = "buttonOptions_load";
+            this.buttonOptions_load.Size = new System.Drawing.Size(75, 23);
+            this.buttonOptions_load.TabIndex = 14;
+            this.buttonOptions_load.Text = "Load";
+            this.buttonOptions_load.UseVisualStyleBackColor = true;
+            this.buttonOptions_load.Click += new System.EventHandler(this.buttonOptions_load_Click);
+            // 
+            // buttonOptions_save
+            // 
+            this.buttonOptions_save.Enabled = false;
+            this.buttonOptions_save.Location = new System.Drawing.Point(564, 3);
+            this.buttonOptions_save.Name = "buttonOptions_save";
+            this.buttonOptions_save.Size = new System.Drawing.Size(75, 23);
+            this.buttonOptions_save.TabIndex = 13;
+            this.buttonOptions_save.Text = "Save";
+            this.buttonOptions_save.UseVisualStyleBackColor = true;
+            // 
+            // buttonOptions_delete
+            // 
+            this.buttonOptions_delete.Location = new System.Drawing.Point(645, 3);
+            this.buttonOptions_delete.Name = "buttonOptions_delete";
+            this.buttonOptions_delete.Size = new System.Drawing.Size(75, 23);
+            this.buttonOptions_delete.TabIndex = 12;
+            this.buttonOptions_delete.Text = "Delete";
+            this.buttonOptions_delete.UseVisualStyleBackColor = true;
+            // 
+            // optionsComboBox
+            // 
+            this.optionsComboBox.FormattingEnabled = true;
+            this.optionsComboBox.Location = new System.Drawing.Point(16, 4);
+            this.optionsComboBox.Name = "optionsComboBox";
+            this.optionsComboBox.Size = new System.Drawing.Size(367, 21);
+            this.optionsComboBox.TabIndex = 0;
             // 
             // Label_CurrentWindowTabInstructions
             // 
@@ -335,7 +394,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -344,68 +402,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.buttonOptions_New);
-            this.panel2.Controls.Add(this.buttonOptions_load);
-            this.panel2.Controls.Add(this.buttonOptions_save);
-            this.panel2.Controls.Add(this.buttonOptions_delete);
-            this.panel2.Controls.Add(this.optionsComboBox);
-            this.panel2.Location = new System.Drawing.Point(6, 7);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 30);
-            this.panel2.TabIndex = 1;
-            // 
-            // buttonOptions_New
-            // 
-            this.buttonOptions_New.Location = new System.Drawing.Point(435, 3);
-            this.buttonOptions_New.Name = "buttonOptions_New";
-            this.buttonOptions_New.Size = new System.Drawing.Size(75, 23);
-            this.buttonOptions_New.TabIndex = 12;
-            this.buttonOptions_New.Text = "New";
-            this.buttonOptions_New.UseVisualStyleBackColor = true;
-            this.buttonOptions_New.Click += new System.EventHandler(this.buttonOptions_New_Click);
-            // 
-            // buttonOptions_load
-            // 
-            this.buttonOptions_load.Location = new System.Drawing.Point(516, 4);
-            this.buttonOptions_load.Name = "buttonOptions_load";
-            this.buttonOptions_load.Size = new System.Drawing.Size(75, 23);
-            this.buttonOptions_load.TabIndex = 14;
-            this.buttonOptions_load.Text = "Load";
-            this.buttonOptions_load.UseVisualStyleBackColor = true;
-            this.buttonOptions_load.Click += new System.EventHandler(this.buttonOptions_load_Click);
-            // 
-            // buttonOptions_save
-            // 
-            this.buttonOptions_save.Enabled = false;
-            this.buttonOptions_save.Location = new System.Drawing.Point(597, 3);
-            this.buttonOptions_save.Name = "buttonOptions_save";
-            this.buttonOptions_save.Size = new System.Drawing.Size(75, 23);
-            this.buttonOptions_save.TabIndex = 13;
-            this.buttonOptions_save.Text = "Save";
-            this.buttonOptions_save.UseVisualStyleBackColor = true;
-            this.buttonOptions_save.Click += new System.EventHandler(this.buttonOptions_save_Click);
-            // 
-            // buttonOptions_delete
-            // 
-            this.buttonOptions_delete.Location = new System.Drawing.Point(678, 3);
-            this.buttonOptions_delete.Name = "buttonOptions_delete";
-            this.buttonOptions_delete.Size = new System.Drawing.Size(75, 23);
-            this.buttonOptions_delete.TabIndex = 12;
-            this.buttonOptions_delete.Text = "Delete";
-            this.buttonOptions_delete.UseVisualStyleBackColor = true;
-            this.buttonOptions_delete.Click += new System.EventHandler(this.button_optionsDelete_Click);
-            // 
-            // optionsComboBox
-            // 
-            this.optionsComboBox.FormattingEnabled = true;
-            this.optionsComboBox.Location = new System.Drawing.Point(4, 4);
-            this.optionsComboBox.Name = "optionsComboBox";
-            this.optionsComboBox.Size = new System.Drawing.Size(425, 21);
-            this.optionsComboBox.TabIndex = 0;
-            this.optionsComboBox.SelectedIndexChanged += new System.EventHandler(this.optionsComboBox_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -1697,12 +1693,12 @@
             this.tabPage1.PerformLayout();
             this.activeWindowPanel.ResumeLayout(false);
             this.activeWindowPanel.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.windowTitleBox.ResumeLayout(false);
             this.windowTitleBox.PerformLayout();
             this.hwndBox.ResumeLayout(false);
             this.hwndBox.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.hooksBox.ResumeLayout(false);
@@ -1762,12 +1758,6 @@
 		private System.Windows.Forms.GroupBox hooksBox;
 		private System.Windows.Forms.Label hooksWarningLabel;
 		private System.Windows.Forms.Button endButtonSetter;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Button buttonOptions_load;
-		private System.Windows.Forms.Button buttonOptions_save;
-		private System.Windows.Forms.Button buttonOptions_delete;
-		private System.Windows.Forms.ComboBox optionsComboBox;
-		private System.Windows.Forms.Button buttonOptions_New;
 		private RefCheckbox RefCheckbox_SendRawMouseInput;
 		private RefCheckbox RefCheckbox_DrawMouse;
 		private RefCheckbox RefCheckbox_RefreshWindowBoundsOnMouseClick;
@@ -1875,5 +1865,11 @@
 		private System.Windows.Forms.Button Button_SplitscreenBottomRight;
 		private System.Windows.Forms.Button Button_SplitscreenTopRight;
 		private WebLinkLabel webLinkLabel1;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Button buttonOptions_New;
+		private System.Windows.Forms.Button buttonOptions_load;
+		private System.Windows.Forms.Button buttonOptions_save;
+		private System.Windows.Forms.Button buttonOptions_delete;
+		private System.Windows.Forms.ComboBox optionsComboBox;
 	}
 }
