@@ -78,8 +78,8 @@ HRESULT __stdcall Dinput8_CreateDeviceA_Hook(IDirectInput8A* pDin, REFGUID rguid
 {
 	std::cout << "Dinput8 CreateDeviceHookA called\n";
 
-	if (controllerIndex == 0)
-		return blockReturnValue;
+	//if (controllerIndex == 0)
+	//	return blockReturnValue;
 
 	for (auto i : controllerGuids)
 	{
@@ -98,8 +98,8 @@ HRESULT __stdcall Dinput8_CreateDeviceW_Hook(IDirectInput8W* pDin, REFGUID rguid
 {
 	std::cout << "Dinput8 CreateDeviceHookW called\n";
 
-	if (controllerIndex == 0)
-		return blockReturnValue;
+	//if (controllerIndex == 0)
+	//	return blockReturnValue;
 
 	for (auto i : controllerGuids)
 	{
@@ -118,8 +118,8 @@ HRESULT __stdcall Dinput7_CreateDeviceA_Hook(IDirectInput7A* pDin, REFGUID rguid
 {
 	std::cout << "Dinput7 CreateDeviceHookA called\n";
 
-	if (controllerIndex == 0)
-		return blockReturnValue;
+	//if (controllerIndex == 0)
+	//	return blockReturnValue;
 
 	for (auto i : controllerGuids)
 	{
@@ -138,8 +138,8 @@ HRESULT __stdcall Dinput7_CreateDeviceW_Hook(IDirectInput7W* pDin, REFGUID rguid
 {
 	std::cout << "Dinput7 CreateDeviceHookW called\n";
 
-	if (controllerIndex == 0)
-		return blockReturnValue;
+	//if (controllerIndex == 0)
+	//	return blockReturnValue;
 
 	for (auto i : controllerGuids)
 	{
