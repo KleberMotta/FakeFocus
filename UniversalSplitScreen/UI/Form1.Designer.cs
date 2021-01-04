@@ -158,6 +158,7 @@
             this.WebLinkAHK = new UniversalSplitScreen.UI.WebLinkLabel();
             this.WebLinkAHKDll = new UniversalSplitScreen.UI.WebLinkLabel();
             this.WebLinkWebsite = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.activeWindowPanel.SuspendLayout();
@@ -190,6 +191,7 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.GroupBoxLicense.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -277,10 +279,10 @@
             // activeWindowPanel
             // 
             this.activeWindowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.activeWindowPanel.Controls.Add(this.panel2);
             this.activeWindowPanel.Controls.Add(this.Label_CurrentWindowTabInstructions);
             this.activeWindowPanel.Controls.Add(this.windowTitleBox);
             this.activeWindowPanel.Controls.Add(this.hwndBox);
+            this.activeWindowPanel.Controls.Add(this.groupBox1);
             this.activeWindowPanel.Location = new System.Drawing.Point(6, 6);
             this.activeWindowPanel.Name = "activeWindowPanel";
             this.activeWindowPanel.Size = new System.Drawing.Size(759, 406);
@@ -293,14 +295,14 @@
             this.panel2.Controls.Add(this.buttonOptions_save);
             this.panel2.Controls.Add(this.buttonOptions_delete);
             this.panel2.Controls.Add(this.optionsComboBox);
-            this.panel2.Location = new System.Drawing.Point(19, 84);
+            this.panel2.Location = new System.Drawing.Point(6, 19);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(720, 30);
             this.panel2.TabIndex = 10;
             // 
             // buttonOptions_New
             // 
-            this.buttonOptions_New.Location = new System.Drawing.Point(402, 3);
+            this.buttonOptions_New.Location = new System.Drawing.Point(394, 3);
             this.buttonOptions_New.Name = "buttonOptions_New";
             this.buttonOptions_New.Size = new System.Drawing.Size(75, 23);
             this.buttonOptions_New.TabIndex = 12;
@@ -309,7 +311,7 @@
             // 
             // buttonOptions_load
             // 
-            this.buttonOptions_load.Location = new System.Drawing.Point(483, 4);
+            this.buttonOptions_load.Location = new System.Drawing.Point(475, 4);
             this.buttonOptions_load.Name = "buttonOptions_load";
             this.buttonOptions_load.Size = new System.Drawing.Size(75, 23);
             this.buttonOptions_load.TabIndex = 14;
@@ -320,7 +322,7 @@
             // buttonOptions_save
             // 
             this.buttonOptions_save.Enabled = false;
-            this.buttonOptions_save.Location = new System.Drawing.Point(564, 3);
+            this.buttonOptions_save.Location = new System.Drawing.Point(556, 3);
             this.buttonOptions_save.Name = "buttonOptions_save";
             this.buttonOptions_save.Size = new System.Drawing.Size(75, 23);
             this.buttonOptions_save.TabIndex = 13;
@@ -329,7 +331,7 @@
             // 
             // buttonOptions_delete
             // 
-            this.buttonOptions_delete.Location = new System.Drawing.Point(645, 3);
+            this.buttonOptions_delete.Location = new System.Drawing.Point(637, 3);
             this.buttonOptions_delete.Name = "buttonOptions_delete";
             this.buttonOptions_delete.Size = new System.Drawing.Size(75, 23);
             this.buttonOptions_delete.TabIndex = 12;
@@ -339,7 +341,7 @@
             // optionsComboBox
             // 
             this.optionsComboBox.FormattingEnabled = true;
-            this.optionsComboBox.Location = new System.Drawing.Point(16, 4);
+            this.optionsComboBox.Location = new System.Drawing.Point(8, 4);
             this.optionsComboBox.Name = "optionsComboBox";
             this.optionsComboBox.Size = new System.Drawing.Size(367, 21);
             this.optionsComboBox.TabIndex = 0;
@@ -546,6 +548,7 @@
             this.groupBox_WindowPositionAndOffsets.TabIndex = 37;
             this.groupBox_WindowPositionAndOffsets.TabStop = false;
             this.groupBox_WindowPositionAndOffsets.Text = "Window position and offsets";
+            this.groupBox_WindowPositionAndOffsets.Enter += new System.EventHandler(this.groupBox_WindowPositionAndOffsets_Enter);
             // 
             // Panel_Splitscreen4Players
             // 
@@ -1675,6 +1678,16 @@
             this.WebLinkWebsite.Text = "Universal Split Screen website";
             this.WebLinkWebsite.Url = "https://universalsplitscreen.github.io/";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Location = new System.Drawing.Point(7, 74);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(747, 302);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Options";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1738,6 +1751,7 @@
             this.tabPage6.ResumeLayout(false);
             this.GroupBoxLicense.ResumeLayout(false);
             this.GroupBoxLicense.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -1871,5 +1885,6 @@
 		private System.Windows.Forms.Button buttonOptions_save;
 		private System.Windows.Forms.Button buttonOptions_delete;
 		private System.Windows.Forms.ComboBox optionsComboBox;
+		private System.Windows.Forms.GroupBox groupBox1;
 	}
 }

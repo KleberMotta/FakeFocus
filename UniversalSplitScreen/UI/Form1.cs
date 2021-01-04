@@ -470,5 +470,9 @@ namespace UniversalSplitScreen.UI
 			Program.SplitScreenManager.MoveWindow(WindowPosition.BottomRight);
 		}
 
+		private void groupBox_WindowPositionAndOffsets_Enter(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
