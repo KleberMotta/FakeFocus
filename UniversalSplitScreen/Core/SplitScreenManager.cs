@@ -83,6 +83,9 @@ namespace UniversalSplitScreen.Core
 
 			SetControllerIndex(0);
 
+			//fakeFocus = new Thread(SendFocusMsgs);
+			//fakeFocus.Start();
+
 			var options = Options.CurrentOptions;
 
 			//Check if windows still exist

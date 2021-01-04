@@ -88,19 +88,19 @@ namespace UniversalSplitScreen.UI
 			RefCheckbox_RefreshWindowBoundsOnMouseClick.RefType				= new RefType<bool>("RefreshWindowBoundsOnMouseClick");
 			RefCheckbox_DrawMouse.RefType									= new RefType<bool>("DrawMouse");
 			
-			RefCheckbox_Hook_FilterRawInput.RefType							= new RefType<bool>("Hook_FilterRawInput");
-			RefCheckbox_Hook_FilterMouseInputMessages.RefType				= new RefType<bool>("Hook_FilterWindowsMouseInput");
+			//RefCheckbox_Hook_FilterRawInput.RefType							= new RefType<bool>("Hook_FilterRawInput");
+			//RefCheckbox_Hook_FilterMouseInputMessages.RefType				= new RefType<bool>("Hook_FilterWindowsMouseInput");
 			RefCheckbox_Hook_GetForegroundWindow.RefType					= new RefType<bool>("Hook_GetForegroundWindow");
-			RefCheckbox_Hook_GetCursorPos.RefType							= new RefType<bool>("Hook_GetCursorPos");
-			RefCheckbox_Hook_SetCursorPos.RefType							= new RefType<bool>("Hook_SetCursorPos");
-			RefCheckbox_Hook_GetAsyncKeyState.RefType						= new RefType<bool>("Hook_GetAsyncKeyState");
-			RefCheckbox_Hook_GetKeyState.RefType							= new RefType<bool>("Hook_GetKeyState");
-			RefCheckbox_Hook_GetKeyboardState.RefType						= new RefType<bool>("Hook_GetKeyboardState");
-			RefCheckbox_Hook_XInput.RefType									= new RefType<bool>("Hook_XInput");
-			RefCheckbox_Hook_Dinput.RefType									= new RefType<bool>("Hook_DInput");
-			RefCheckbox_Hook_UseLegacyInput.RefType							= new RefType<bool>("Hook_UseLegacyInput");
-			RefCheckbox_UpdateAbsoluteFlagInMouseMessage.RefType			= new RefType<bool>("UpdateAbsoluteFlagInMouseMessage");
-			RefCheckbox_Hook_MouseVisibility.RefType						= new RefType<bool>("Hook_MouseVisibility");
+			//RefCheckbox_Hook_GetCursorPos.RefType							= new RefType<bool>("Hook_GetCursorPos");
+			//RefCheckbox_Hook_SetCursorPos.RefType							= new RefType<bool>("Hook_SetCursorPos");
+			//RefCheckbox_Hook_GetAsyncKeyState.RefType						= new RefType<bool>("Hook_GetAsyncKeyState");
+			//RefCheckbox_Hook_GetKeyState.RefType							= new RefType<bool>("Hook_GetKeyState");
+			//RefCheckbox_Hook_GetKeyboardState.RefType						= new RefType<bool>("Hook_GetKeyboardState");
+			//RefCheckbox_Hook_XInput.RefType									= new RefType<bool>("Hook_XInput");
+			//RefCheckbox_Hook_Dinput.RefType									= new RefType<bool>("Hook_DInput");
+			//RefCheckbox_Hook_UseLegacyInput.RefType							= new RefType<bool>("Hook_UseLegacyInput");
+			//RefCheckbox_UpdateAbsoluteFlagInMouseMessage.RefType			= new RefType<bool>("UpdateAbsoluteFlagInMouseMessage");
+			//RefCheckbox_Hook_MouseVisibility.RefType						= new RefType<bool>("Hook_MouseVisibility");
 
 			var handleNameRef												= new RefType<string>("AutofillHandleName");
 			RefTextbox_AutofillHandleName.RefType = handleNameRef;
@@ -257,7 +257,7 @@ namespace UniversalSplitScreen.UI
 
 		private void CheckBox_Transparency_CheckedChanged(object sender, EventArgs e)
 		{
-			Program.Form.Opacity = CheckBox_Transparency.Checked ? 0.90 : 1.00;
+			//Program.Form.Opacity = CheckBox_Transparency.Checked ? 0.90 : 1.00;
 		}
 
 		private void Button_CheckUpdates_Click(object sender, EventArgs e)
@@ -470,14 +470,50 @@ namespace UniversalSplitScreen.UI
 			Program.SplitScreenManager.MoveWindow(WindowPosition.BottomRight);
 		}
 
-		private void groupBox_WindowPositionAndOffsets_Enter(object sender, EventArgs e)
+		private void Label_CurrentVersion_Click(object sender, EventArgs e)
 		{
 
 		}
 
-		private void RefCheckbox_SendFakeWindowActivateMessages_CheckedChanged_1(object sender, EventArgs e)
+		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
 
 		}
+
+		private void panel4_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void WebLinkIlyaki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+
+		}
+
+		private void webLinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+
+		}
+
+		private void webLinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+
+		}
+
+		private void panel3_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void FileDialog_FindWindowHook_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+
+		}
+
 	}
 }

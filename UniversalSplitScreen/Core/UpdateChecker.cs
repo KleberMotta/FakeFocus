@@ -9,8 +9,8 @@ namespace UniversalSplitScreen.Core
 {
 	public static class UpdateChecker
 	{
-		public const string currentVersion = "v1.2.0";
-		const string request = @"https://api.github.com/repos/UniversalSplitScreen/UniversalSplitScreen/releases/latest";
+		public const string currentVersion = "v1.0.0";
+		const string request = @"https://api.github.com/KleberMotta/FakeFocus/releases/latest";
 
 		/// <summary>
 		/// Returns empty string if no update availible, and the new version tag name otherwise

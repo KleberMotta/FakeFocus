@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Universal Split Screen")]
-[assembly: AssemblyCopyright("Copyright ©  2019 Ilyaki")]
+[assembly: AssemblyProduct("Fake Focus")]
+[assembly: AssemblyCopyright("Copyright ©  2021 KM")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

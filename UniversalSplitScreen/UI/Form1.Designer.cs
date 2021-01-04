@@ -32,18 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.Label_StopWarning = new System.Windows.Forms.Label();
-            this.CheckBox_Transparency = new System.Windows.Forms.CheckBox();
-            this.startButton = new System.Windows.Forms.Button();
-            this.stopButton = new System.Windows.Forms.Button();
-            this.resetAllButton = new System.Windows.Forms.Button();
             this.activeWindowPanel = new System.Windows.Forms.Panel();
+            this.Label_StopWarning = new System.Windows.Forms.Label();
             this.Label_CurrentWindowTabInstructions = new System.Windows.Forms.Label();
             this.windowTitleBox = new System.Windows.Forms.GroupBox();
             this.windowTitleLabel = new System.Windows.Forms.Label();
+            this.startButton = new System.Windows.Forms.Button();
             this.hwndBox = new System.Windows.Forms.GroupBox();
             this.hWndLabel = new System.Windows.Forms.Label();
+            this.stopButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.hooksBox = new System.Windows.Forms.GroupBox();
+            this.RefCheckbox_Hook_GetForegroundWindow = new UniversalSplitScreen.UI.RefCheckbox();
+            this.hooksWarningLabel = new System.Windows.Forms.Label();
             this.RefCheckbox_SendFakeWindowActivateMessageOnlyAtStart = new UniversalSplitScreen.UI.RefCheckbox();
             this.RefCheckbox_SystemMouseToMiddle = new UniversalSplitScreen.UI.RefCheckbox();
             this.RefCheckbox_SendScrollwheel = new UniversalSplitScreen.UI.RefCheckbox();
@@ -61,12 +62,33 @@
             this.buttonOptions_save = new System.Windows.Forms.Button();
             this.buttonOptions_delete = new System.Windows.Forms.Button();
             this.optionsComboBox = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Label_CurrentVersion = new System.Windows.Forms.Label();
+            this.Button_CheckUpdates = new System.Windows.Forms.Button();
+            this.WebLinkWebsite = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.webLinkLabel2 = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.webLinkLabel1 = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.WebLinkJson = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.WebLinkIlyaki = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.LabelHandleSearch = new System.Windows.Forms.Label();
+            this.WebLinkEasyHook = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.WebLinkAHKInterop = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.WebLinkAHK = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.WebLinkAHKDll = new UniversalSplitScreen.UI.WebLinkLabel();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.GroupBoxLicense = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Checkbox_AutomaticallyCheckForUpdates = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Label_AutofillHandleName = new System.Windows.Forms.Label();
             this.RefTextbox_AutofillHandleName = new UniversalSplitScreen.UI.RefTextbox();
             this.endButtonSetter = new System.Windows.Forms.Button();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.GroupBox_WindowOptions = new System.Windows.Forms.GroupBox();
             this.Button_ToggleWindowBorders = new System.Windows.Forms.Button();
             this.Button_EnableWindowResize = new System.Windows.Forms.Button();
@@ -90,7 +112,6 @@
             this.refTextbox_BorderExtraPadding = new UniversalSplitScreen.UI.RefTextbox();
             this.Label_BorderExtraPadding = new System.Windows.Forms.Label();
             this.Label_TopOffset = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -122,59 +143,29 @@
             this.Label_Goldberg_ID = new System.Windows.Forms.Label();
             this.Label_Goldberg_Username = new System.Windows.Forms.Label();
             this.WebLinkLabel_Goldberg = new UniversalSplitScreen.UI.WebLinkLabel();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.Checkbox_AutomaticallyCheckForUpdates = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.Label_CurrentVersion = new System.Windows.Forms.Label();
-            this.Button_CheckUpdates = new System.Windows.Forms.Button();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.webLinkLabel1 = new UniversalSplitScreen.UI.WebLinkLabel();
-            this.WebLinkJson = new UniversalSplitScreen.UI.WebLinkLabel();
-            this.WebLinkIlyaki = new UniversalSplitScreen.UI.WebLinkLabel();
-            this.LabelHandleSearch = new System.Windows.Forms.Label();
-            this.WebLinkEasyHook = new UniversalSplitScreen.UI.WebLinkLabel();
-            this.WebLinkAHKInterop = new UniversalSplitScreen.UI.WebLinkLabel();
-            this.WebLinkAHK = new UniversalSplitScreen.UI.WebLinkLabel();
-            this.WebLinkAHKDll = new UniversalSplitScreen.UI.WebLinkLabel();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.GroupBoxLicense = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.WebLinkWebsite = new UniversalSplitScreen.UI.WebLinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.FileDialog_FindWindowHook = new System.Windows.Forms.OpenFileDialog();
-            this.hooksWarningLabel = new System.Windows.Forms.Label();
-            this.RefCheckbox_Hook_FilterRawInput = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_FilterMouseInputMessages = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_GetForegroundWindow = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_GetCursorPos = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_GetAsyncKeyState = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_GetKeyState = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_SetCursorPos = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_XInput = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_UseLegacyInput = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_MouseVisibility = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_Dinput = new UniversalSplitScreen.UI.RefCheckbox();
-            this.RefCheckbox_Hook_GetKeyboardState = new UniversalSplitScreen.UI.RefCheckbox();
-            this.hooksBox = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.activeWindowPanel.SuspendLayout();
             this.windowTitleBox.SuspendLayout();
             this.hwndBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.hooksBox.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.GroupBoxLicense.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabPage9.SuspendLayout();
             this.GroupBox_WindowOptions.SuspendLayout();
             this.groupBox_WindowPositionAndOffsets.SuspendLayout();
             this.Panel_Splitscreen4Players.SuspendLayout();
             this.Panel_Splitscreen2PlayersHorizontal.SuspendLayout();
             this.Panel_Splitscreen2PlayersVertical.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -184,22 +175,11 @@
             this.flowLayoutPanel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.GroupBoxLicense.SuspendLayout();
-            this.hooksBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage9);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -210,93 +190,52 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.Label_StopWarning);
-            this.tabPage1.Controls.Add(this.CheckBox_Transparency);
-            this.tabPage1.Controls.Add(this.startButton);
-            this.tabPage1.Controls.Add(this.stopButton);
-            this.tabPage1.Controls.Add(this.resetAllButton);
             this.tabPage1.Controls.Add(this.activeWindowPanel);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(768, 444);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Current window";
+            this.tabPage1.Text = "Main window";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // activeWindowPanel
+            // 
+            this.activeWindowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.activeWindowPanel.Controls.Add(this.Label_StopWarning);
+            this.activeWindowPanel.Controls.Add(this.Label_CurrentWindowTabInstructions);
+            this.activeWindowPanel.Controls.Add(this.windowTitleBox);
+            this.activeWindowPanel.Controls.Add(this.startButton);
+            this.activeWindowPanel.Controls.Add(this.hwndBox);
+            this.activeWindowPanel.Controls.Add(this.stopButton);
+            this.activeWindowPanel.Controls.Add(this.groupBox1);
+            this.activeWindowPanel.Location = new System.Drawing.Point(6, 6);
+            this.activeWindowPanel.Name = "activeWindowPanel";
+            this.activeWindowPanel.Size = new System.Drawing.Size(759, 432);
+            this.activeWindowPanel.TabIndex = 7;
             // 
             // Label_StopWarning
             // 
             this.Label_StopWarning.AutoSize = true;
             this.Label_StopWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Label_StopWarning.Location = new System.Drawing.Point(384, 415);
+            this.Label_StopWarning.Location = new System.Drawing.Point(347, 399);
             this.Label_StopWarning.MaximumSize = new System.Drawing.Size(200, 0);
             this.Label_StopWarning.Name = "Label_StopWarning";
-            this.Label_StopWarning.Size = new System.Drawing.Size(172, 26);
+            this.Label_StopWarning.Size = new System.Drawing.Size(198, 26);
             this.Label_StopWarning.TabIndex = 11;
-            this.Label_StopWarning.Text = "Press the End key (default) on any keyboard to stop split screen";
-            // 
-            // CheckBox_Transparency
-            // 
-            this.CheckBox_Transparency.AutoSize = true;
-            this.CheckBox_Transparency.Location = new System.Drawing.Point(92, 424);
-            this.CheckBox_Transparency.Name = "CheckBox_Transparency";
-            this.CheckBox_Transparency.Size = new System.Drawing.Size(121, 17);
-            this.CheckBox_Transparency.TabIndex = 11;
-            this.CheckBox_Transparency.Text = "Transparency effect";
-            this.CheckBox_Transparency.UseVisualStyleBackColor = true;
-            this.CheckBox_Transparency.CheckedChanged += new System.EventHandler(this.CheckBox_Transparency_CheckedChanged);
-            // 
-            // startButton
-            // 
-            this.startButton.Location = new System.Drawing.Point(562, 418);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(96, 23);
-            this.startButton.TabIndex = 10;
-            this.startButton.Text = "Start split screen";
-            this.startButton.UseVisualStyleBackColor = true;
-            this.startButton.Click += new System.EventHandler(this.startButton_Click);
-            // 
-            // stopButton
-            // 
-            this.stopButton.Location = new System.Drawing.Point(664, 418);
-            this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(101, 23);
-            this.stopButton.TabIndex = 9;
-            this.stopButton.Text = "Stop split screen";
-            this.stopButton.UseVisualStyleBackColor = true;
-            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
-            // 
-            // resetAllButton
-            // 
-            this.resetAllButton.Location = new System.Drawing.Point(9, 418);
-            this.resetAllButton.Name = "resetAllButton";
-            this.resetAllButton.Size = new System.Drawing.Size(75, 23);
-            this.resetAllButton.TabIndex = 8;
-            this.resetAllButton.Text = "Reset all";
-            this.resetAllButton.UseVisualStyleBackColor = true;
-            this.resetAllButton.Click += new System.EventHandler(this.resetAllButton_Click);
-            // 
-            // activeWindowPanel
-            // 
-            this.activeWindowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.activeWindowPanel.Controls.Add(this.Label_CurrentWindowTabInstructions);
-            this.activeWindowPanel.Controls.Add(this.windowTitleBox);
-            this.activeWindowPanel.Controls.Add(this.hwndBox);
-            this.activeWindowPanel.Controls.Add(this.groupBox1);
-            this.activeWindowPanel.Location = new System.Drawing.Point(6, 6);
-            this.activeWindowPanel.Name = "activeWindowPanel";
-            this.activeWindowPanel.Size = new System.Drawing.Size(759, 406);
-            this.activeWindowPanel.TabIndex = 7;
+            this.Label_StopWarning.Text = "Press the End key to stop Faking Focus on the affected game windows";
             // 
             // Label_CurrentWindowTabInstructions
             // 
             this.Label_CurrentWindowTabInstructions.AutoSize = true;
             this.Label_CurrentWindowTabInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_CurrentWindowTabInstructions.ForeColor = System.Drawing.Color.LimeGreen;
             this.Label_CurrentWindowTabInstructions.Location = new System.Drawing.Point(4, 49);
             this.Label_CurrentWindowTabInstructions.Name = "Label_CurrentWindowTabInstructions";
-            this.Label_CurrentWindowTabInstructions.Size = new System.Drawing.Size(429, 15);
+            this.Label_CurrentWindowTabInstructions.Size = new System.Drawing.Size(665, 15);
             this.Label_CurrentWindowTabInstructions.TabIndex = 9;
-            this.Label_CurrentWindowTabInstructions.Text = "Focus a game\'s window (e.g. by alt+tabbing) and set up its input devices here.";
+            this.Label_CurrentWindowTabInstructions.Text = "1. Focus a game\'s window (e.g. by alt+tabbing); 2. Find the right options for you" +
+    "r game (trail and error); 3. Run Fake Focus";
             // 
             // windowTitleBox
             // 
@@ -317,6 +256,16 @@
             this.windowTitleLabel.Size = new System.Drawing.Size(0, 13);
             this.windowTitleLabel.TabIndex = 1;
             // 
+            // startButton
+            // 
+            this.startButton.Location = new System.Drawing.Point(551, 402);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(96, 23);
+            this.startButton.TabIndex = 10;
+            this.startButton.Text = "Run Fake Focus";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
             // hwndBox
             // 
             this.hwndBox.Controls.Add(this.hWndLabel);
@@ -336,8 +285,19 @@
             this.hWndLabel.TabIndex = 0;
             this.hWndLabel.Text = "hWnd";
             // 
+            // stopButton
+            // 
+            this.stopButton.Location = new System.Drawing.Point(653, 402);
+            this.stopButton.Name = "stopButton";
+            this.stopButton.Size = new System.Drawing.Size(101, 23);
+            this.stopButton.TabIndex = 9;
+            this.stopButton.Text = "Stop faking focus";
+            this.stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.hooksBox);
             this.groupBox1.Controls.Add(this.RefCheckbox_SendFakeWindowActivateMessageOnlyAtStart);
             this.groupBox1.Controls.Add(this.RefCheckbox_SystemMouseToMiddle);
             this.groupBox1.Controls.Add(this.RefCheckbox_SendScrollwheel);
@@ -350,12 +310,48 @@
             this.groupBox1.Controls.Add(this.RefCheckbox_SendRawKeyboardInput);
             this.groupBox1.Controls.Add(this.RefCheckbox_SendRawMouseInput);
             this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Location = new System.Drawing.Point(7, 74);
+            this.groupBox1.Location = new System.Drawing.Point(3, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(747, 319);
+            this.groupBox1.Size = new System.Drawing.Size(751, 319);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
+            // 
+            // hooksBox
+            // 
+            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_GetForegroundWindow);
+            this.hooksBox.Controls.Add(this.hooksWarningLabel);
+            this.hooksBox.Location = new System.Drawing.Point(423, 67);
+            this.hooksBox.Name = "hooksBox";
+            this.hooksBox.Size = new System.Drawing.Size(318, 94);
+            this.hooksBox.TabIndex = 36;
+            this.hooksBox.TabStop = false;
+            this.hooksBox.Text = "Hooks";
+            // 
+            // RefCheckbox_Hook_GetForegroundWindow
+            // 
+            this.RefCheckbox_Hook_GetForegroundWindow.AutoSize = true;
+            this.RefCheckbox_Hook_GetForegroundWindow.Location = new System.Drawing.Point(9, 68);
+            this.RefCheckbox_Hook_GetForegroundWindow.Name = "RefCheckbox_Hook_GetForegroundWindow";
+            this.RefCheckbox_Hook_GetForegroundWindow.RefType = null;
+            this.RefCheckbox_Hook_GetForegroundWindow.Size = new System.Drawing.Size(165, 17);
+            this.RefCheckbox_Hook_GetForegroundWindow.TabIndex = 20;
+            this.RefCheckbox_Hook_GetForegroundWindow.Text = "Hook GetForegroundWindow";
+            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_GetForegroundWindow, "Tricks the game into thinking it is the foreground window.\r\nUse this if a game is" +
+        " not responding to input.");
+            this.RefCheckbox_Hook_GetForegroundWindow.UseVisualStyleBackColor = true;
+            // 
+            // hooksWarningLabel
+            // 
+            this.hooksWarningLabel.AutoSize = true;
+            this.hooksWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.hooksWarningLabel.Location = new System.Drawing.Point(6, 16);
+            this.hooksWarningLabel.MaximumSize = new System.Drawing.Size(280, 0);
+            this.hooksWarningLabel.Name = "hooksWarningLabel";
+            this.hooksWarningLabel.Size = new System.Drawing.Size(278, 39);
+            this.hooksWarningLabel.TabIndex = 0;
+            this.hooksWarningLabel.Text = "Warning: Hooks run code in the target game process. This may be detected as a fal" +
+    "se positive by an anti-cheat system or anti-virus software.";
             // 
             // RefCheckbox_SendFakeWindowActivateMessageOnlyAtStart
             // 
@@ -516,16 +512,17 @@
             // 
             // buttonOptions_New
             // 
-            this.buttonOptions_New.Location = new System.Drawing.Point(407, 3);
+            this.buttonOptions_New.Location = new System.Drawing.Point(417, 3);
             this.buttonOptions_New.Name = "buttonOptions_New";
             this.buttonOptions_New.Size = new System.Drawing.Size(75, 23);
             this.buttonOptions_New.TabIndex = 12;
             this.buttonOptions_New.Text = "New";
             this.buttonOptions_New.UseVisualStyleBackColor = true;
+            this.buttonOptions_New.Click += new System.EventHandler(this.buttonOptions_New_Click);
             // 
             // buttonOptions_load
             // 
-            this.buttonOptions_load.Location = new System.Drawing.Point(488, 4);
+            this.buttonOptions_load.Location = new System.Drawing.Point(498, 4);
             this.buttonOptions_load.Name = "buttonOptions_load";
             this.buttonOptions_load.Size = new System.Drawing.Size(75, 23);
             this.buttonOptions_load.TabIndex = 14;
@@ -536,40 +533,308 @@
             // buttonOptions_save
             // 
             this.buttonOptions_save.Enabled = false;
-            this.buttonOptions_save.Location = new System.Drawing.Point(569, 3);
+            this.buttonOptions_save.Location = new System.Drawing.Point(579, 4);
             this.buttonOptions_save.Name = "buttonOptions_save";
             this.buttonOptions_save.Size = new System.Drawing.Size(75, 23);
             this.buttonOptions_save.TabIndex = 13;
             this.buttonOptions_save.Text = "Save";
             this.buttonOptions_save.UseVisualStyleBackColor = true;
+            this.buttonOptions_save.Click += new System.EventHandler(this.buttonOptions_save_Click);
             // 
             // buttonOptions_delete
             // 
-            this.buttonOptions_delete.Location = new System.Drawing.Point(650, 3);
+            this.buttonOptions_delete.Location = new System.Drawing.Point(660, 4);
             this.buttonOptions_delete.Name = "buttonOptions_delete";
             this.buttonOptions_delete.Size = new System.Drawing.Size(75, 23);
             this.buttonOptions_delete.TabIndex = 12;
             this.buttonOptions_delete.Text = "Delete";
             this.buttonOptions_delete.UseVisualStyleBackColor = true;
+            this.buttonOptions_delete.Click += new System.EventHandler(this.button_optionsDelete_Click);
             // 
             // optionsComboBox
             // 
             this.optionsComboBox.FormattingEnabled = true;
             this.optionsComboBox.Location = new System.Drawing.Point(8, 4);
             this.optionsComboBox.Name = "optionsComboBox";
-            this.optionsComboBox.Size = new System.Drawing.Size(367, 21);
+            this.optionsComboBox.Size = new System.Drawing.Size(386, 21);
             this.optionsComboBox.TabIndex = 0;
             // 
-            // tabPage2
+            // tabPage3
             // 
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 444);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Options";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(768, 444);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "About";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.Button_CheckUpdates);
+            this.panel3.Controls.Add(this.WebLinkWebsite);
+            this.panel3.Controls.Add(this.tabControl2);
+            this.panel3.Location = new System.Drawing.Point(6, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(762, 435);
+            this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Consolas", 8F);
+            this.textBox2.Location = new System.Drawing.Point(3, 11);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(437, 94);
+            this.textBox2.TabIndex = 9;
+            this.textBox2.Text = resources.GetString("textBox2.Text");
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.Label_CurrentVersion);
+            this.panel4.Location = new System.Drawing.Point(538, 62);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(212, 17);
+            this.panel4.TabIndex = 7;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // Label_CurrentVersion
+            // 
+            this.Label_CurrentVersion.AutoSize = true;
+            this.Label_CurrentVersion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Label_CurrentVersion.Location = new System.Drawing.Point(95, 0);
+            this.Label_CurrentVersion.Name = "Label_CurrentVersion";
+            this.Label_CurrentVersion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Label_CurrentVersion.Size = new System.Drawing.Size(117, 13);
+            this.Label_CurrentVersion.TabIndex = 6;
+            this.Label_CurrentVersion.Text = "Current version: vX.Y.Z";
+            this.Label_CurrentVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Label_CurrentVersion.Click += new System.EventHandler(this.Label_CurrentVersion_Click);
+            // 
+            // Button_CheckUpdates
+            // 
+            this.Button_CheckUpdates.Location = new System.Drawing.Point(641, 20);
+            this.Button_CheckUpdates.Name = "Button_CheckUpdates";
+            this.Button_CheckUpdates.Size = new System.Drawing.Size(109, 24);
+            this.Button_CheckUpdates.TabIndex = 8;
+            this.Button_CheckUpdates.Text = "Check for updates";
+            // 
+            // WebLinkWebsite
+            // 
+            this.WebLinkWebsite.AutoSize = true;
+            this.WebLinkWebsite.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebLinkWebsite.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.WebLinkWebsite.Location = new System.Drawing.Point(638, 92);
+            this.WebLinkWebsite.Name = "WebLinkWebsite";
+            this.WebLinkWebsite.Size = new System.Drawing.Size(112, 15);
+            this.WebLinkWebsite.TabIndex = 2;
+            this.WebLinkWebsite.TabStop = true;
+            this.WebLinkWebsite.Text = "Fake Focus repo";
+            this.WebLinkWebsite.Url = "https://github.com/KleberMotta/FakeFocus";
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Location = new System.Drawing.Point(3, 110);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(756, 322);
+            this.tabControl2.TabIndex = 4;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.webLinkLabel2);
+            this.tabPage5.Controls.Add(this.webLinkLabel1);
+            this.tabPage5.Controls.Add(this.WebLinkJson);
+            this.tabPage5.Controls.Add(this.WebLinkIlyaki);
+            this.tabPage5.Controls.Add(this.LabelHandleSearch);
+            this.tabPage5.Controls.Add(this.WebLinkEasyHook);
+            this.tabPage5.Controls.Add(this.WebLinkAHKInterop);
+            this.tabPage5.Controls.Add(this.WebLinkAHK);
+            this.tabPage5.Controls.Add(this.WebLinkAHKDll);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(748, 296);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "Credits";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // webLinkLabel2
+            // 
+            this.webLinkLabel2.AutoSize = true;
+            this.webLinkLabel2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.webLinkLabel2.LinkArea = new System.Windows.Forms.LinkArea(31, 13);
+            this.webLinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.webLinkLabel2.Location = new System.Drawing.Point(6, 6);
+            this.webLinkLabel2.Name = "webLinkLabel2";
+            this.webLinkLabel2.Size = new System.Drawing.Size(285, 20);
+            this.webLinkLabel2.TabIndex = 8;
+            this.webLinkLabel2.TabStop = true;
+            this.webLinkLabel2.Text = "Universal Split Screen creator: Ilyaki";
+            this.webLinkLabel2.Url = "https://github.com/Ilyaki";
+            this.webLinkLabel2.UseCompatibleTextRendering = true;
+            this.webLinkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.webLinkLabel2_LinkClicked);
+            // 
+            // webLinkLabel1
+            // 
+            this.webLinkLabel1.AutoSize = true;
+            this.webLinkLabel1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.webLinkLabel1.LinkArea = new System.Windows.Forms.LinkArea(20, 13);
+            this.webLinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.webLinkLabel1.Location = new System.Drawing.Point(6, 26);
+            this.webLinkLabel1.Name = "webLinkLabel1";
+            this.webLinkLabel1.Size = new System.Drawing.Size(248, 20);
+            this.webLinkLabel1.TabIndex = 1;
+            this.webLinkLabel1.TabStop = true;
+            this.webLinkLabel1.Text = "Window positioning: VirtualRakoon";
+            this.webLinkLabel1.Url = "https://github.com/VirtualRakoon";
+            this.webLinkLabel1.UseCompatibleTextRendering = true;
+            this.webLinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.webLinkLabel1_LinkClicked);
+            // 
+            // WebLinkJson
+            // 
+            this.WebLinkJson.AutoSize = true;
+            this.WebLinkJson.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebLinkJson.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.WebLinkJson.Location = new System.Drawing.Point(6, 168);
+            this.WebLinkJson.Name = "WebLinkJson";
+            this.WebLinkJson.Size = new System.Drawing.Size(63, 15);
+            this.WebLinkJson.TabIndex = 7;
+            this.WebLinkJson.TabStop = true;
+            this.WebLinkJson.Text = "Json.NET";
+            this.WebLinkJson.Url = "https://www.newtonsoft.com/json";
+            // 
+            // WebLinkIlyaki
+            // 
+            this.WebLinkIlyaki.AutoSize = true;
+            this.WebLinkIlyaki.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebLinkIlyaki.LinkArea = new System.Windows.Forms.LinkArea(18, 30);
+            this.WebLinkIlyaki.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.WebLinkIlyaki.Location = new System.Drawing.Point(6, 46);
+            this.WebLinkIlyaki.Name = "WebLinkIlyaki";
+            this.WebLinkIlyaki.Size = new System.Drawing.Size(218, 20);
+            this.WebLinkIlyaki.TabIndex = 0;
+            this.WebLinkIlyaki.TabStop = true;
+            this.WebLinkIlyaki.Text = "FakeFocus author: KleberMotta";
+            this.WebLinkIlyaki.Url = "https://github.com/KleberMotta";
+            this.WebLinkIlyaki.UseCompatibleTextRendering = true;
+            this.WebLinkIlyaki.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.WebLinkIlyaki_LinkClicked);
+            // 
+            // LabelHandleSearch
+            // 
+            this.LabelHandleSearch.AutoSize = true;
+            this.LabelHandleSearch.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHandleSearch.Location = new System.Drawing.Point(6, 144);
+            this.LabelHandleSearch.Name = "LabelHandleSearch";
+            this.LabelHandleSearch.Size = new System.Drawing.Size(581, 15);
+            this.LabelHandleSearch.TabIndex = 6;
+            this.LabelHandleSearch.Text = "Source engine unlocker handle search: Zoltan Csizmadia, zoltan_csizmadia@yahoo.co" +
+    "m";
+            // 
+            // WebLinkEasyHook
+            // 
+            this.WebLinkEasyHook.AutoSize = true;
+            this.WebLinkEasyHook.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebLinkEasyHook.LinkArea = new System.Windows.Forms.LinkArea(0, 8);
+            this.WebLinkEasyHook.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.WebLinkEasyHook.Location = new System.Drawing.Point(6, 68);
+            this.WebLinkEasyHook.Name = "WebLinkEasyHook";
+            this.WebLinkEasyHook.Size = new System.Drawing.Size(336, 20);
+            this.WebLinkEasyHook.TabIndex = 2;
+            this.WebLinkEasyHook.TabStop = true;
+            this.WebLinkEasyHook.Text = "EasyHook: Christoph Husse and Justin Stenning";
+            this.WebLinkEasyHook.Url = "https://easyhook.github.io/";
+            this.WebLinkEasyHook.UseCompatibleTextRendering = true;
+            // 
+            // WebLinkAHKInterop
+            // 
+            this.WebLinkAHKInterop.AutoSize = true;
+            this.WebLinkAHKInterop.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebLinkAHKInterop.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.WebLinkAHKInterop.Location = new System.Drawing.Point(6, 120);
+            this.WebLinkAHKInterop.Name = "WebLinkAHKInterop";
+            this.WebLinkAHKInterop.Size = new System.Drawing.Size(126, 15);
+            this.WebLinkAHKInterop.TabIndex = 5;
+            this.WebLinkAHKInterop.TabStop = true;
+            this.WebLinkAHKInterop.Text = "AutoHotKey.Introp";
+            this.WebLinkAHKInterop.Url = "https://github.com/amazing-andrew/AutoHotkey.Interop";
+            // 
+            // WebLinkAHK
+            // 
+            this.WebLinkAHK.AutoSize = true;
+            this.WebLinkAHK.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebLinkAHK.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.WebLinkAHK.Location = new System.Drawing.Point(6, 90);
+            this.WebLinkAHK.Name = "WebLinkAHK";
+            this.WebLinkAHK.Size = new System.Drawing.Size(77, 15);
+            this.WebLinkAHK.TabIndex = 3;
+            this.WebLinkAHK.TabStop = true;
+            this.WebLinkAHK.Text = "AutoHotKey";
+            this.WebLinkAHK.Url = "https://github.com/Lexikos/AutoHotkey_L";
+            // 
+            // WebLinkAHKDll
+            // 
+            this.WebLinkAHKDll.AutoSize = true;
+            this.WebLinkAHKDll.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebLinkAHKDll.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.WebLinkAHKDll.Location = new System.Drawing.Point(6, 105);
+            this.WebLinkAHKDll.Name = "WebLinkAHKDll";
+            this.WebLinkAHKDll.Size = new System.Drawing.Size(49, 15);
+            this.WebLinkAHKDll.TabIndex = 4;
+            this.WebLinkAHKDll.TabStop = true;
+            this.WebLinkAHKDll.Text = "ahkdll";
+            this.WebLinkAHKDll.Url = "https://github.com/HotKeyIt/ahkdll";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.GroupBoxLicense);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(748, 296);
+            this.tabPage6.TabIndex = 1;
+            this.tabPage6.Text = "License";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // GroupBoxLicense
+            // 
+            this.GroupBoxLicense.Controls.Add(this.label1);
+            this.GroupBoxLicense.Location = new System.Drawing.Point(6, 6);
+            this.GroupBoxLicense.Name = "GroupBoxLicense";
+            this.GroupBoxLicense.Size = new System.Drawing.Size(736, 312);
+            this.GroupBoxLicense.TabIndex = 6;
+            this.GroupBoxLicense.TabStop = false;
+            this.GroupBoxLicense.Text = "Fake Focus Screen license";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(500, 273);
+            this.label1.TabIndex = 0;
+            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Checkbox_AutomaticallyCheckForUpdates
+            // 
+            this.Checkbox_AutomaticallyCheckForUpdates.Location = new System.Drawing.Point(0, 0);
+            this.Checkbox_AutomaticallyCheckForUpdates.Name = "Checkbox_AutomaticallyCheckForUpdates";
+            this.Checkbox_AutomaticallyCheckForUpdates.Size = new System.Drawing.Size(104, 24);
+            this.Checkbox_AutomaticallyCheckForUpdates.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // panel1
             // 
@@ -577,7 +842,6 @@
             this.panel1.Controls.Add(this.Label_AutofillHandleName);
             this.panel1.Controls.Add(this.RefTextbox_AutofillHandleName);
             this.panel1.Controls.Add(this.endButtonSetter);
-            this.panel1.Controls.Add(this.hooksBox);
             this.panel1.Location = new System.Drawing.Point(6, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(755, 398);
@@ -613,18 +877,6 @@
         "the end key in the game\'s controls.");
             this.endButtonSetter.UseVisualStyleBackColor = true;
             this.endButtonSetter.Click += new System.EventHandler(this.endButtonSetter_Click);
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.GroupBox_WindowOptions);
-            this.tabPage9.Controls.Add(this.groupBox_WindowPositionAndOffsets);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(768, 444);
-            this.tabPage9.TabIndex = 4;
-            this.tabPage9.Text = "Window utilities";
-            this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // GroupBox_WindowOptions
             // 
@@ -677,7 +929,6 @@
             this.groupBox_WindowPositionAndOffsets.TabIndex = 37;
             this.groupBox_WindowPositionAndOffsets.TabStop = false;
             this.groupBox_WindowPositionAndOffsets.Text = "Window position and offsets";
-            this.groupBox_WindowPositionAndOffsets.Enter += new System.EventHandler(this.groupBox_WindowPositionAndOffsets_Enter);
             // 
             // Panel_Splitscreen4Players
             // 
@@ -872,16 +1123,6 @@
             this.Label_TopOffset.TabIndex = 28;
             this.Label_TopOffset.Text = "Top Offset";
             this.toolTip1.SetToolTip(this.Label_TopOffset, "Useful to hide the title bar if it can\'t be removed");
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.tabControl3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(768, 444);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Utilities";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabControl3
             // 
@@ -1235,249 +1476,6 @@
             this.WebLinkLabel_Goldberg.Url = "https://universalsplitscreen.github.io/docs/goldberg/";
             this.WebLinkLabel_Goldberg.UseCompatibleTextRendering = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(768, 444);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "About";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.Checkbox_AutomaticallyCheckForUpdates);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.Button_CheckUpdates);
-            this.panel3.Controls.Add(this.tabControl2);
-            this.panel3.Controls.Add(this.WebLinkWebsite);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(762, 435);
-            this.panel3.TabIndex = 3;
-            // 
-            // Checkbox_AutomaticallyCheckForUpdates
-            // 
-            this.Checkbox_AutomaticallyCheckForUpdates.AutoSize = true;
-            this.Checkbox_AutomaticallyCheckForUpdates.Location = new System.Drawing.Point(578, 59);
-            this.Checkbox_AutomaticallyCheckForUpdates.Name = "Checkbox_AutomaticallyCheckForUpdates";
-            this.Checkbox_AutomaticallyCheckForUpdates.Size = new System.Drawing.Size(177, 17);
-            this.Checkbox_AutomaticallyCheckForUpdates.TabIndex = 8;
-            this.Checkbox_AutomaticallyCheckForUpdates.Text = "Automatically check for updates";
-            this.Checkbox_AutomaticallyCheckForUpdates.UseVisualStyleBackColor = true;
-            this.Checkbox_AutomaticallyCheckForUpdates.CheckedChanged += new System.EventHandler(this.Checkbox_AutomaticallyCheckForUpdates_CheckedChanged);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.Label_CurrentVersion);
-            this.panel4.Location = new System.Drawing.Point(543, 34);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(212, 17);
-            this.panel4.TabIndex = 7;
-            // 
-            // Label_CurrentVersion
-            // 
-            this.Label_CurrentVersion.AutoSize = true;
-            this.Label_CurrentVersion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Label_CurrentVersion.Location = new System.Drawing.Point(95, 0);
-            this.Label_CurrentVersion.Name = "Label_CurrentVersion";
-            this.Label_CurrentVersion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Label_CurrentVersion.Size = new System.Drawing.Size(117, 13);
-            this.Label_CurrentVersion.TabIndex = 6;
-            this.Label_CurrentVersion.Text = "Current version: vX.Y.Z";
-            this.Label_CurrentVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // Button_CheckUpdates
-            // 
-            this.Button_CheckUpdates.Location = new System.Drawing.Point(646, 5);
-            this.Button_CheckUpdates.Name = "Button_CheckUpdates";
-            this.Button_CheckUpdates.Size = new System.Drawing.Size(109, 23);
-            this.Button_CheckUpdates.TabIndex = 5;
-            this.Button_CheckUpdates.Text = "Check for updates";
-            this.Button_CheckUpdates.UseVisualStyleBackColor = true;
-            this.Button_CheckUpdates.Click += new System.EventHandler(this.Button_CheckUpdates_Click);
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Location = new System.Drawing.Point(3, 82);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(756, 350);
-            this.tabControl2.TabIndex = 4;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.webLinkLabel1);
-            this.tabPage5.Controls.Add(this.WebLinkJson);
-            this.tabPage5.Controls.Add(this.WebLinkIlyaki);
-            this.tabPage5.Controls.Add(this.LabelHandleSearch);
-            this.tabPage5.Controls.Add(this.WebLinkEasyHook);
-            this.tabPage5.Controls.Add(this.WebLinkAHKInterop);
-            this.tabPage5.Controls.Add(this.WebLinkAHK);
-            this.tabPage5.Controls.Add(this.WebLinkAHKDll);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(748, 324);
-            this.tabPage5.TabIndex = 0;
-            this.tabPage5.Text = "Credits";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // webLinkLabel1
-            // 
-            this.webLinkLabel1.AutoSize = true;
-            this.webLinkLabel1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.webLinkLabel1.LinkArea = new System.Windows.Forms.LinkArea(20, 13);
-            this.webLinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.webLinkLabel1.Location = new System.Drawing.Point(6, 23);
-            this.webLinkLabel1.Name = "webLinkLabel1";
-            this.webLinkLabel1.Size = new System.Drawing.Size(248, 20);
-            this.webLinkLabel1.TabIndex = 1;
-            this.webLinkLabel1.TabStop = true;
-            this.webLinkLabel1.Text = "Window positioning: VirtualRakoon";
-            this.webLinkLabel1.Url = "https://github.com/VirtualRakoon";
-            this.webLinkLabel1.UseCompatibleTextRendering = true;
-            // 
-            // WebLinkJson
-            // 
-            this.WebLinkJson.AutoSize = true;
-            this.WebLinkJson.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebLinkJson.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.WebLinkJson.Location = new System.Drawing.Point(6, 150);
-            this.WebLinkJson.Name = "WebLinkJson";
-            this.WebLinkJson.Size = new System.Drawing.Size(63, 15);
-            this.WebLinkJson.TabIndex = 7;
-            this.WebLinkJson.TabStop = true;
-            this.WebLinkJson.Text = "Json.NET";
-            this.WebLinkJson.Url = "https://www.newtonsoft.com/json";
-            // 
-            // WebLinkIlyaki
-            // 
-            this.WebLinkIlyaki.AutoSize = true;
-            this.WebLinkIlyaki.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebLinkIlyaki.LinkArea = new System.Windows.Forms.LinkArea(30, 37);
-            this.WebLinkIlyaki.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.WebLinkIlyaki.Location = new System.Drawing.Point(6, 3);
-            this.WebLinkIlyaki.Name = "WebLinkIlyaki";
-            this.WebLinkIlyaki.Size = new System.Drawing.Size(277, 20);
-            this.WebLinkIlyaki.TabIndex = 0;
-            this.WebLinkIlyaki.TabStop = true;
-            this.WebLinkIlyaki.Text = "Universal Split Screen author: Ilyaki";
-            this.WebLinkIlyaki.Url = "https://github.com/Ilyaki";
-            this.WebLinkIlyaki.UseCompatibleTextRendering = true;
-            // 
-            // LabelHandleSearch
-            // 
-            this.LabelHandleSearch.AutoSize = true;
-            this.LabelHandleSearch.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHandleSearch.Location = new System.Drawing.Point(6, 126);
-            this.LabelHandleSearch.Name = "LabelHandleSearch";
-            this.LabelHandleSearch.Size = new System.Drawing.Size(581, 15);
-            this.LabelHandleSearch.TabIndex = 6;
-            this.LabelHandleSearch.Text = "Source engine unlocker handle search: Zoltan Csizmadia, zoltan_csizmadia@yahoo.co" +
-    "m";
-            // 
-            // WebLinkEasyHook
-            // 
-            this.WebLinkEasyHook.AutoSize = true;
-            this.WebLinkEasyHook.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebLinkEasyHook.LinkArea = new System.Windows.Forms.LinkArea(0, 8);
-            this.WebLinkEasyHook.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.WebLinkEasyHook.Location = new System.Drawing.Point(6, 43);
-            this.WebLinkEasyHook.Name = "WebLinkEasyHook";
-            this.WebLinkEasyHook.Size = new System.Drawing.Size(336, 20);
-            this.WebLinkEasyHook.TabIndex = 2;
-            this.WebLinkEasyHook.TabStop = true;
-            this.WebLinkEasyHook.Text = "EasyHook: Christoph Husse and Justin Stenning";
-            this.WebLinkEasyHook.Url = "https://easyhook.github.io/";
-            this.WebLinkEasyHook.UseCompatibleTextRendering = true;
-            // 
-            // WebLinkAHKInterop
-            // 
-            this.WebLinkAHKInterop.AutoSize = true;
-            this.WebLinkAHKInterop.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebLinkAHKInterop.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.WebLinkAHKInterop.Location = new System.Drawing.Point(6, 102);
-            this.WebLinkAHKInterop.Name = "WebLinkAHKInterop";
-            this.WebLinkAHKInterop.Size = new System.Drawing.Size(126, 15);
-            this.WebLinkAHKInterop.TabIndex = 5;
-            this.WebLinkAHKInterop.TabStop = true;
-            this.WebLinkAHKInterop.Text = "AutoHotKey.Introp";
-            this.WebLinkAHKInterop.Url = "https://github.com/amazing-andrew/AutoHotkey.Interop";
-            // 
-            // WebLinkAHK
-            // 
-            this.WebLinkAHK.AutoSize = true;
-            this.WebLinkAHK.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebLinkAHK.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.WebLinkAHK.Location = new System.Drawing.Point(6, 72);
-            this.WebLinkAHK.Name = "WebLinkAHK";
-            this.WebLinkAHK.Size = new System.Drawing.Size(77, 15);
-            this.WebLinkAHK.TabIndex = 3;
-            this.WebLinkAHK.TabStop = true;
-            this.WebLinkAHK.Text = "AutoHotKey";
-            this.WebLinkAHK.Url = "https://github.com/Lexikos/AutoHotkey_L";
-            // 
-            // WebLinkAHKDll
-            // 
-            this.WebLinkAHKDll.AutoSize = true;
-            this.WebLinkAHKDll.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebLinkAHKDll.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.WebLinkAHKDll.Location = new System.Drawing.Point(6, 87);
-            this.WebLinkAHKDll.Name = "WebLinkAHKDll";
-            this.WebLinkAHKDll.Size = new System.Drawing.Size(49, 15);
-            this.WebLinkAHKDll.TabIndex = 4;
-            this.WebLinkAHKDll.TabStop = true;
-            this.WebLinkAHKDll.Text = "ahkdll";
-            this.WebLinkAHKDll.Url = "https://github.com/HotKeyIt/ahkdll";
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.GroupBoxLicense);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(748, 324);
-            this.tabPage6.TabIndex = 1;
-            this.tabPage6.Text = "License";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // GroupBoxLicense
-            // 
-            this.GroupBoxLicense.Controls.Add(this.label1);
-            this.GroupBoxLicense.Location = new System.Drawing.Point(6, 6);
-            this.GroupBoxLicense.Name = "GroupBoxLicense";
-            this.GroupBoxLicense.Size = new System.Drawing.Size(736, 312);
-            this.GroupBoxLicense.TabIndex = 6;
-            this.GroupBoxLicense.TabStop = false;
-            this.GroupBoxLicense.Text = "Universal Split Screen license";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(500, 273);
-            this.label1.TabIndex = 0;
-            this.label1.Text = resources.GetString("label1.Text");
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // WebLinkWebsite
-            // 
-            this.WebLinkWebsite.AutoSize = true;
-            this.WebLinkWebsite.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebLinkWebsite.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.WebLinkWebsite.Location = new System.Drawing.Point(3, 9);
-            this.WebLinkWebsite.Name = "WebLinkWebsite";
-            this.WebLinkWebsite.Size = new System.Drawing.Size(217, 15);
-            this.WebLinkWebsite.TabIndex = 2;
-            this.WebLinkWebsite.TabStop = true;
-            this.WebLinkWebsite.Text = "Universal Split Screen website";
-            this.WebLinkWebsite.Url = "https://universalsplitscreen.github.io/";
-            // 
             // toolTip1
             // 
             this.toolTip1.AutoPopDelay = 10000000;
@@ -1488,205 +1486,7 @@
             // 
             this.FileDialog_FindWindowHook.Filter = "Executable files|*.exe";
             this.FileDialog_FindWindowHook.Title = "Select game executable";
-            // 
-            // hooksWarningLabel
-            // 
-            this.hooksWarningLabel.AutoSize = true;
-            this.hooksWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.hooksWarningLabel.Location = new System.Drawing.Point(6, 16);
-            this.hooksWarningLabel.MaximumSize = new System.Drawing.Size(280, 0);
-            this.hooksWarningLabel.Name = "hooksWarningLabel";
-            this.hooksWarningLabel.Size = new System.Drawing.Size(278, 52);
-            this.hooksWarningLabel.TabIndex = 0;
-            this.hooksWarningLabel.Text = "Warning: Hooks run code in the target game process. This may be detected as a fal" +
-    "se positive by an anti-cheat system or anti-virus software. See the documentatio" +
-    "n for more info.";
-            // 
-            // RefCheckbox_Hook_FilterRawInput
-            // 
-            this.RefCheckbox_Hook_FilterRawInput.AutoSize = true;
-            this.RefCheckbox_Hook_FilterRawInput.Location = new System.Drawing.Point(9, 77);
-            this.RefCheckbox_Hook_FilterRawInput.Name = "RefCheckbox_Hook_FilterRawInput";
-            this.RefCheckbox_Hook_FilterRawInput.RefType = null;
-            this.RefCheckbox_Hook_FilterRawInput.Size = new System.Drawing.Size(214, 17);
-            this.RefCheckbox_Hook_FilterRawInput.TabIndex = 20;
-            this.RefCheckbox_Hook_FilterRawInput.Text = "Filter raw input messages from Windows";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_FilterRawInput, "Filters raw mouse input so only one device is used.\r\nUse this if the game is resp" +
-        "onding to input from multiple mice.");
-            this.RefCheckbox_Hook_FilterRawInput.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_FilterMouseInputMessages
-            // 
-            this.RefCheckbox_Hook_FilterMouseInputMessages.AutoSize = true;
-            this.RefCheckbox_Hook_FilterMouseInputMessages.Location = new System.Drawing.Point(9, 100);
-            this.RefCheckbox_Hook_FilterMouseInputMessages.Name = "RefCheckbox_Hook_FilterMouseInputMessages";
-            this.RefCheckbox_Hook_FilterMouseInputMessages.RefType = null;
-            this.RefCheckbox_Hook_FilterMouseInputMessages.Size = new System.Drawing.Size(228, 17);
-            this.RefCheckbox_Hook_FilterMouseInputMessages.TabIndex = 20;
-            this.RefCheckbox_Hook_FilterMouseInputMessages.Text = "Filter mouse input messages from Windows";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_FilterMouseInputMessages, "Filters out mouse input messages sent by Windows, but not by this program.\r\nUse t" +
-        "his if a game is not tricked into using the fake mouse cursor.");
-            this.RefCheckbox_Hook_FilterMouseInputMessages.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_GetForegroundWindow
-            // 
-            this.RefCheckbox_Hook_GetForegroundWindow.AutoSize = true;
-            this.RefCheckbox_Hook_GetForegroundWindow.Location = new System.Drawing.Point(9, 123);
-            this.RefCheckbox_Hook_GetForegroundWindow.Name = "RefCheckbox_Hook_GetForegroundWindow";
-            this.RefCheckbox_Hook_GetForegroundWindow.RefType = null;
-            this.RefCheckbox_Hook_GetForegroundWindow.Size = new System.Drawing.Size(165, 17);
-            this.RefCheckbox_Hook_GetForegroundWindow.TabIndex = 20;
-            this.RefCheckbox_Hook_GetForegroundWindow.Text = "Hook GetForegroundWindow";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_GetForegroundWindow, "Tricks the game into thinking it is the foreground window.\r\nUse this if a game is" +
-        " not responding to input.");
-            this.RefCheckbox_Hook_GetForegroundWindow.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_GetCursorPos
-            // 
-            this.RefCheckbox_Hook_GetCursorPos.AutoSize = true;
-            this.RefCheckbox_Hook_GetCursorPos.Location = new System.Drawing.Point(9, 146);
-            this.RefCheckbox_Hook_GetCursorPos.Name = "RefCheckbox_Hook_GetCursorPos";
-            this.RefCheckbox_Hook_GetCursorPos.RefType = null;
-            this.RefCheckbox_Hook_GetCursorPos.Size = new System.Drawing.Size(120, 17);
-            this.RefCheckbox_Hook_GetCursorPos.TabIndex = 20;
-            this.RefCheckbox_Hook_GetCursorPos.Text = "Hook GetCursorPos";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_GetCursorPos, "Tricks the game into using the fake mouse cursor if it calls GetCursorPos.\r\nUse t" +
-        "his if mouse input is not working correctly.");
-            this.RefCheckbox_Hook_GetCursorPos.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_GetAsyncKeyState
-            // 
-            this.RefCheckbox_Hook_GetAsyncKeyState.AutoSize = true;
-            this.RefCheckbox_Hook_GetAsyncKeyState.Location = new System.Drawing.Point(9, 297);
-            this.RefCheckbox_Hook_GetAsyncKeyState.Name = "RefCheckbox_Hook_GetAsyncKeyState";
-            this.RefCheckbox_Hook_GetAsyncKeyState.RefType = null;
-            this.RefCheckbox_Hook_GetAsyncKeyState.Size = new System.Drawing.Size(144, 17);
-            this.RefCheckbox_Hook_GetAsyncKeyState.TabIndex = 20;
-            this.RefCheckbox_Hook_GetAsyncKeyState.Text = "Hook GetAsyncKeyState";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_GetAsyncKeyState, resources.GetString("RefCheckbox_Hook_GetAsyncKeyState.ToolTip"));
-            this.RefCheckbox_Hook_GetAsyncKeyState.UseVisualStyleBackColor = true;
-            this.RefCheckbox_Hook_GetAsyncKeyState.CheckedChanged += new System.EventHandler(this.RefCheckbox_Hook_GetAsyncKeyState_CheckedChanged);
-            // 
-            // RefCheckbox_Hook_GetKeyState
-            // 
-            this.RefCheckbox_Hook_GetKeyState.AutoSize = true;
-            this.RefCheckbox_Hook_GetKeyState.Location = new System.Drawing.Point(9, 251);
-            this.RefCheckbox_Hook_GetKeyState.Name = "RefCheckbox_Hook_GetKeyState";
-            this.RefCheckbox_Hook_GetKeyState.RefType = null;
-            this.RefCheckbox_Hook_GetKeyState.Size = new System.Drawing.Size(168, 17);
-            this.RefCheckbox_Hook_GetKeyState.TabIndex = 20;
-            this.RefCheckbox_Hook_GetKeyState.Text = "Hook GetKeyState for all keys";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_GetKeyState, "This hook will fix a bug in Borderlands 2 where the player would seemingly random" +
-        "ly stop moving.");
-            this.RefCheckbox_Hook_GetKeyState.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_SetCursorPos
-            // 
-            this.RefCheckbox_Hook_SetCursorPos.AutoSize = true;
-            this.RefCheckbox_Hook_SetCursorPos.Location = new System.Drawing.Point(9, 169);
-            this.RefCheckbox_Hook_SetCursorPos.Name = "RefCheckbox_Hook_SetCursorPos";
-            this.RefCheckbox_Hook_SetCursorPos.RefType = null;
-            this.RefCheckbox_Hook_SetCursorPos.Size = new System.Drawing.Size(119, 17);
-            this.RefCheckbox_Hook_SetCursorPos.TabIndex = 20;
-            this.RefCheckbox_Hook_SetCursorPos.Text = "Hook SetCursorPos";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_SetCursorPos, "Overloads the SetCursorPos function, so a game can only move its fake cursor and " +
-        "not the real cursor.");
-            this.RefCheckbox_Hook_SetCursorPos.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_XInput
-            // 
-            this.RefCheckbox_Hook_XInput.AutoSize = true;
-            this.RefCheckbox_Hook_XInput.Location = new System.Drawing.Point(9, 343);
-            this.RefCheckbox_Hook_XInput.Name = "RefCheckbox_Hook_XInput";
-            this.RefCheckbox_Hook_XInput.RefType = null;
-            this.RefCheckbox_Hook_XInput.Size = new System.Drawing.Size(153, 17);
-            this.RefCheckbox_Hook_XInput.TabIndex = 21;
-            this.RefCheckbox_Hook_XInput.Text = "Hook XInput for gamepads";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_XInput, resources.GetString("RefCheckbox_Hook_XInput.ToolTip"));
-            this.RefCheckbox_Hook_XInput.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_UseLegacyInput
-            // 
-            this.RefCheckbox_Hook_UseLegacyInput.AutoSize = true;
-            this.RefCheckbox_Hook_UseLegacyInput.Location = new System.Drawing.Point(9, 192);
-            this.RefCheckbox_Hook_UseLegacyInput.Name = "RefCheckbox_Hook_UseLegacyInput";
-            this.RefCheckbox_Hook_UseLegacyInput.RefType = null;
-            this.RefCheckbox_Hook_UseLegacyInput.Size = new System.Drawing.Size(194, 17);
-            this.RefCheckbox_Hook_UseLegacyInput.TabIndex = 22;
-            this.RefCheckbox_Hook_UseLegacyInput.Text = "Use legacy input (see requirements)";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_UseLegacyInput, resources.GetString("RefCheckbox_Hook_UseLegacyInput.ToolTip"));
-            this.RefCheckbox_Hook_UseLegacyInput.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_MouseVisibility
-            // 
-            this.RefCheckbox_Hook_MouseVisibility.AutoSize = true;
-            this.RefCheckbox_Hook_MouseVisibility.Location = new System.Drawing.Point(9, 320);
-            this.RefCheckbox_Hook_MouseVisibility.Name = "RefCheckbox_Hook_MouseVisibility";
-            this.RefCheckbox_Hook_MouseVisibility.RefType = null;
-            this.RefCheckbox_Hook_MouseVisibility.Size = new System.Drawing.Size(124, 17);
-            this.RefCheckbox_Hook_MouseVisibility.TabIndex = 23;
-            this.RefCheckbox_Hook_MouseVisibility.Text = "Hook mouse visibility";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_MouseVisibility, resources.GetString("RefCheckbox_Hook_MouseVisibility.ToolTip"));
-            this.RefCheckbox_Hook_MouseVisibility.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_UpdateAbsoluteFlagInMouseMessage
-            // 
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage.AutoSize = true;
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage.Location = new System.Drawing.Point(9, 215);
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage.Name = "RefCheckbox_UpdateAbsoluteFlagInMouseMessage";
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage.RefType = null;
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage.Size = new System.Drawing.Size(237, 30);
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage.TabIndex = 21;
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage.Text = "Update absolute position flag in mouse move\r\n messages (for legacy input)";
-            this.toolTip1.SetToolTip(this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage, resources.GetString("RefCheckbox_UpdateAbsoluteFlagInMouseMessage.ToolTip"));
-            this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_Dinput
-            // 
-            this.RefCheckbox_Hook_Dinput.AutoSize = true;
-            this.RefCheckbox_Hook_Dinput.Location = new System.Drawing.Point(9, 366);
-            this.RefCheckbox_Hook_Dinput.Name = "RefCheckbox_Hook_Dinput";
-            this.RefCheckbox_Hook_Dinput.RefType = null;
-            this.RefCheckbox_Hook_Dinput.Size = new System.Drawing.Size(155, 17);
-            this.RefCheckbox_Hook_Dinput.TabIndex = 24;
-            this.RefCheckbox_Hook_Dinput.Text = "DInput to XInput translation";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_Dinput, resources.GetString("RefCheckbox_Hook_Dinput.ToolTip"));
-            this.RefCheckbox_Hook_Dinput.UseVisualStyleBackColor = true;
-            // 
-            // RefCheckbox_Hook_GetKeyboardState
-            // 
-            this.RefCheckbox_Hook_GetKeyboardState.AutoSize = true;
-            this.RefCheckbox_Hook_GetKeyboardState.Location = new System.Drawing.Point(9, 274);
-            this.RefCheckbox_Hook_GetKeyboardState.Name = "RefCheckbox_Hook_GetKeyboardState";
-            this.RefCheckbox_Hook_GetKeyboardState.RefType = null;
-            this.RefCheckbox_Hook_GetKeyboardState.Size = new System.Drawing.Size(142, 17);
-            this.RefCheckbox_Hook_GetKeyboardState.TabIndex = 25;
-            this.RefCheckbox_Hook_GetKeyboardState.Text = "Hook GetKeyboardState";
-            this.toolTip1.SetToolTip(this.RefCheckbox_Hook_GetKeyboardState, resources.GetString("RefCheckbox_Hook_GetKeyboardState.ToolTip"));
-            this.RefCheckbox_Hook_GetKeyboardState.UseVisualStyleBackColor = true;
-            // 
-            // hooksBox
-            // 
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_GetKeyboardState);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_Dinput);
-            this.hooksBox.Controls.Add(this.RefCheckbox_UpdateAbsoluteFlagInMouseMessage);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_MouseVisibility);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_UseLegacyInput);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_XInput);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_SetCursorPos);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_GetKeyState);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_GetAsyncKeyState);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_GetCursorPos);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_GetForegroundWindow);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_FilterMouseInputMessages);
-            this.hooksBox.Controls.Add(this.RefCheckbox_Hook_FilterRawInput);
-            this.hooksBox.Controls.Add(this.hooksWarningLabel);
-            this.hooksBox.Location = new System.Drawing.Point(472, 3);
-            this.hooksBox.Name = "hooksBox";
-            this.hooksBox.Size = new System.Drawing.Size(280, 392);
-            this.hooksBox.TabIndex = 10;
-            this.hooksBox.TabStop = false;
-            this.hooksBox.Text = "Hooks";
+            this.FileDialog_FindWindowHook.FileOk += new System.ComponentModel.CancelEventHandler(this.FileDialog_FindWindowHook_FileOk);
             // 
             // Form1
             // 
@@ -1699,11 +1499,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Universal Split Screen";
+            this.Text = "Fake Focus";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.activeWindowPanel.ResumeLayout(false);
             this.activeWindowPanel.PerformLayout();
             this.windowTitleBox.ResumeLayout(false);
@@ -1712,18 +1512,28 @@
             this.hwndBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.hooksBox.ResumeLayout(false);
+            this.hooksBox.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.GroupBoxLicense.ResumeLayout(false);
+            this.GroupBoxLicense.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabPage9.ResumeLayout(false);
             this.GroupBox_WindowOptions.ResumeLayout(false);
             this.groupBox_WindowPositionAndOffsets.ResumeLayout(false);
             this.groupBox_WindowPositionAndOffsets.PerformLayout();
             this.Panel_Splitscreen4Players.ResumeLayout(false);
             this.Panel_Splitscreen2PlayersHorizontal.ResumeLayout(false);
             this.Panel_Splitscreen2PlayersVertical.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -1740,35 +1550,22 @@
             this.panel5.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.GroupBoxLicense.ResumeLayout(false);
-            this.GroupBoxLicense.PerformLayout();
-            this.hooksBox.ResumeLayout(false);
-            this.hooksBox.PerformLayout();
             this.ResumeLayout(false);
 
 		}
 
 		#endregion
 		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.Button Button_CheckUpdates;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.GroupBox windowTitleBox;
 		private System.Windows.Forms.Label windowTitleLabel;
-		private System.Windows.Forms.TabPage tabPage2;
+		//private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.GroupBox hwndBox;
 		private System.Windows.Forms.Label hWndLabel;
 		private System.Windows.Forms.Panel activeWindowPanel;
 		private System.Windows.Forms.Button startButton;
 		private System.Windows.Forms.Button stopButton;
-		private System.Windows.Forms.Button resetAllButton;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button endButtonSetter;
 		private System.Windows.Forms.TabPage tabPage3;
@@ -1787,14 +1584,12 @@
 		private System.Windows.Forms.GroupBox GroupBoxLicense;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ToolTip toolTip1;
-		private System.Windows.Forms.CheckBox CheckBox_Transparency;
-		private System.Windows.Forms.Button Button_CheckUpdates;
 		private System.Windows.Forms.Label Label_CurrentVersion;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Label Label_StopWarning;
 		private System.Windows.Forms.Label Label_AutofillHandleName;
 		private RefTextbox RefTextbox_AutofillHandleName;
-		private System.Windows.Forms.TabPage tabPage4;
+		//private System.Windows.Forms.TabPage tabPage4;
 		private System.Windows.Forms.TabControl tabControl3;
 		private System.Windows.Forms.TabPage tabPage7;
 		private System.Windows.Forms.Button Button_BrowseFindWindowHookExe;
@@ -1819,7 +1614,6 @@
 		private System.Windows.Forms.TextBox TextBox_Goldberg_Username;
 		private System.Windows.Forms.Label Label_Goldberg_ID;
 		private System.Windows.Forms.Label Label_Goldberg_Username;
-		private System.Windows.Forms.CheckBox Checkbox_AutomaticallyCheckForUpdates;
 		private System.Windows.Forms.CheckBox CheckBox_StartupHook_UseAppdataSwitch;
 		private System.Windows.Forms.Panel panel8;
 		private System.Windows.Forms.CheckBox CheckBox_StartupHook_FindMutexHook;
@@ -1829,7 +1623,8 @@
 		private System.Windows.Forms.Panel panel9;
 		private System.Windows.Forms.ComboBox ComboBox_AppdataSwitch_Selector;
 		private System.Windows.Forms.Label Label_CurrentWindowTabInstructions;
-		private System.Windows.Forms.TabPage tabPage9;
+		private System.Windows.Forms.CheckBox Checkbox_AutomaticallyCheckForUpdates;
+		//private System.Windows.Forms.TabPage tabPage9;
 		private System.Windows.Forms.Button Button_ToggleWindowBorders;
 		private System.Windows.Forms.Button Button_EnableWindowResize;
 		private RefTextbox refTextbox_BorderExtraPadding;
@@ -1873,19 +1668,10 @@
 		private RefCheckbox RefCheckbox_SendRawKeyboardInput;
 		private RefCheckbox RefCheckbox_SendRawMouseInput;
 		private System.Windows.Forms.GroupBox hooksBox;
-		private RefCheckbox RefCheckbox_Hook_GetKeyboardState;
-		private RefCheckbox RefCheckbox_Hook_Dinput;
-		private RefCheckbox RefCheckbox_UpdateAbsoluteFlagInMouseMessage;
-		private RefCheckbox RefCheckbox_Hook_MouseVisibility;
-		private RefCheckbox RefCheckbox_Hook_UseLegacyInput;
-		private RefCheckbox RefCheckbox_Hook_XInput;
-		private RefCheckbox RefCheckbox_Hook_SetCursorPos;
-		private RefCheckbox RefCheckbox_Hook_GetKeyState;
-		private RefCheckbox RefCheckbox_Hook_GetAsyncKeyState;
-		private RefCheckbox RefCheckbox_Hook_GetCursorPos;
 		private RefCheckbox RefCheckbox_Hook_GetForegroundWindow;
-		private RefCheckbox RefCheckbox_Hook_FilterMouseInputMessages;
-		private RefCheckbox RefCheckbox_Hook_FilterRawInput;
 		private System.Windows.Forms.Label hooksWarningLabel;
+		private System.Windows.Forms.TextBox textBox1;
+		private WebLinkLabel webLinkLabel2;
+		private System.Windows.Forms.TextBox textBox2;
 	}
 }

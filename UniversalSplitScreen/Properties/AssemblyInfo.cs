@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Universal Split Screen")]
-[assembly: AssemblyDescription("Universal Split Screen by Ilyaki")]
+[assembly: AssemblyTitle("Fake Focus")]
+[assembly: AssemblyDescription("Fake Focus by KleberMotta")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Universal Split Screen")]
-[assembly: AssemblyCopyright("Copyright ©  2019 Ilyaki")]
+[assembly: AssemblyProduct("Fake Focus")]
+[assembly: AssemblyCopyright("Copyright ©  2021 KleberMotta")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
