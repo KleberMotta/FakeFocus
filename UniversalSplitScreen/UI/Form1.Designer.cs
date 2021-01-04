@@ -39,10 +39,6 @@
             this.resetAllButton = new System.Windows.Forms.Button();
             this.activeWindowPanel = new System.Windows.Forms.Panel();
             this.Label_CurrentWindowTabInstructions = new System.Windows.Forms.Label();
-            this.GamePadGroupBox = new System.Windows.Forms.GroupBox();
-            this.ControllerHookNote = new System.Windows.Forms.Label();
-            this.ControllerIndexLabel = new System.Windows.Forms.Label();
-            this.ControllerIndexComboBox = new System.Windows.Forms.ComboBox();
             this.windowTitleBox = new System.Windows.Forms.GroupBox();
             this.windowTitleLabel = new System.Windows.Forms.Label();
             this.hwndBox = new System.Windows.Forms.GroupBox();
@@ -165,7 +161,6 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.activeWindowPanel.SuspendLayout();
-            this.GamePadGroupBox.SuspendLayout();
             this.windowTitleBox.SuspendLayout();
             this.hwndBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -283,7 +278,6 @@
             // 
             this.activeWindowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.activeWindowPanel.Controls.Add(this.Label_CurrentWindowTabInstructions);
-            this.activeWindowPanel.Controls.Add(this.GamePadGroupBox);
             this.activeWindowPanel.Controls.Add(this.windowTitleBox);
             this.activeWindowPanel.Controls.Add(this.hwndBox);
             this.activeWindowPanel.Location = new System.Drawing.Point(6, 6);
@@ -300,65 +294,6 @@
             this.Label_CurrentWindowTabInstructions.Size = new System.Drawing.Size(429, 15);
             this.Label_CurrentWindowTabInstructions.TabIndex = 9;
             this.Label_CurrentWindowTabInstructions.Text = "Focus a game\'s window (e.g. by alt+tabbing) and set up its input devices here.";
-            // 
-            // GamePadGroupBox
-            // 
-            this.GamePadGroupBox.Controls.Add(this.ControllerHookNote);
-            this.GamePadGroupBox.Controls.Add(this.ControllerIndexLabel);
-            this.GamePadGroupBox.Controls.Add(this.ControllerIndexComboBox);
-            this.GamePadGroupBox.Location = new System.Drawing.Point(415, 76);
-            this.GamePadGroupBox.Name = "GamePadGroupBox";
-            this.GamePadGroupBox.Size = new System.Drawing.Size(210, 144);
-            this.GamePadGroupBox.TabIndex = 7;
-            this.GamePadGroupBox.TabStop = false;
-            this.GamePadGroupBox.Text = "Gamepad/Controller/Joystick";
-            // 
-            // ControllerHookNote
-            // 
-            this.ControllerHookNote.AutoSize = true;
-            this.ControllerHookNote.Location = new System.Drawing.Point(6, 86);
-            this.ControllerHookNote.MaximumSize = new System.Drawing.Size(205, 0);
-            this.ControllerHookNote.Name = "ControllerHookNote";
-            this.ControllerHookNote.Size = new System.Drawing.Size(203, 52);
-            this.ControllerHookNote.TabIndex = 2;
-            this.ControllerHookNote.Text = "Note: You need to enable XInput Hook for gamepads to work. You will also need to " +
-    "enable DInput to XInput translation to use more than 4 controllers.";
-            // 
-            // ControllerIndexLabel
-            // 
-            this.ControllerIndexLabel.AutoSize = true;
-            this.ControllerIndexLabel.Location = new System.Drawing.Point(7, 20);
-            this.ControllerIndexLabel.Name = "ControllerIndexLabel";
-            this.ControllerIndexLabel.Size = new System.Drawing.Size(82, 13);
-            this.ControllerIndexLabel.TabIndex = 1;
-            this.ControllerIndexLabel.Text = "Controller index:";
-            // 
-            // ControllerIndexComboBox
-            // 
-            this.ControllerIndexComboBox.FormattingEnabled = true;
-            this.ControllerIndexComboBox.Items.AddRange(new object[] {
-            "No controller",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16"});
-            this.ControllerIndexComboBox.Location = new System.Drawing.Point(6, 36);
-            this.ControllerIndexComboBox.Name = "ControllerIndexComboBox";
-            this.ControllerIndexComboBox.Size = new System.Drawing.Size(197, 21);
-            this.ControllerIndexComboBox.TabIndex = 0;
-            this.ControllerIndexComboBox.SelectedIndexChanged += new System.EventHandler(this.ControllerIndexComboBox_SelectedIndexChanged);
             // 
             // windowTitleBox
             // 
@@ -1762,8 +1697,6 @@
             this.tabPage1.PerformLayout();
             this.activeWindowPanel.ResumeLayout(false);
             this.activeWindowPanel.PerformLayout();
-            this.GamePadGroupBox.ResumeLayout(false);
-            this.GamePadGroupBox.PerformLayout();
             this.windowTitleBox.ResumeLayout(false);
             this.windowTitleBox.PerformLayout();
             this.hwndBox.ResumeLayout(false);
@@ -1850,10 +1783,6 @@
 		private RefCheckbox RefCheckbox_Hook_FilterMouseInputMessages;
 		private RefCheckbox RefCheckbox_Hook_FilterRawInput;
 		private RefCheckbox RefCheckbox_Hook_SetCursorPos;
-		private System.Windows.Forms.GroupBox GamePadGroupBox;
-		private System.Windows.Forms.ComboBox ControllerIndexComboBox;
-		private System.Windows.Forms.Label ControllerHookNote;
-		private System.Windows.Forms.Label ControllerIndexLabel;
 		private RefCheckbox RefCheckbox_Hook_XInput;
 		private RefCheckbox RefCheckbox_SendScrollwheel;
 		private System.Windows.Forms.TabPage tabPage3;

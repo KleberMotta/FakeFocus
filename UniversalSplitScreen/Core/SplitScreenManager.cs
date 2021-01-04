@@ -81,30 +81,7 @@ namespace UniversalSplitScreen.Core
 		public void ActivateSplitScreen()
 		{
 
-			#region XInput/DInput warnings
-			bool needXinputHook = false;
-			bool needDinputTranslationHook = false;
-			foreach (var window in windows.Values)
-			{
-				if (window.ControllerIndex > 0 && !Options.CurrentOptions.Hook_XInput)
-					needXinputHook = true;
-
-				if (window.ControllerIndex > 4 && (!Options.CurrentOptions.Hook_DInput || !Options.CurrentOptions.Hook_XInput))
-					needDinputTranslationHook = true;
-			}
-
-			if (needXinputHook &&
-				MessageBox.Show(
-						@"You need to enable the XInput hook to use controllers. Do you want to continue anyway?", @"Warning",
-						MessageBoxButtons.YesNo) != DialogResult.Yes)
-				return;
-
-			if (needDinputTranslationHook &&
-				MessageBox.Show(
-						@"You need to enable the XInput hook and the DInput to XInput translation hook to use more than 4 controllers. Do you want to continue anyway?", @"Warning",
-						MessageBoxButtons.YesNo) != DialogResult.Yes)
-				return;
-			#endregion
+			SetControllerIndex(0);
 
 			var options = Options.CurrentOptions;
 
@@ -486,7 +463,7 @@ namespace UniversalSplitScreen.Core
 			windows.Clear();
 			//Program.Form.MouseHandleText = "0";
 			//Program.Form.KeyboardHandleText = "0";
-			Program.Form.ControllerSelectedIndex = 0;
+			//Program.Form.ControllerSelectedIndex = 0;
 		}
 		#endregion
 
@@ -649,14 +626,14 @@ namespace UniversalSplitScreen.Core
 						//We have devices attached to this window, so display the handles.
 						//Program.Form.MouseHandleText = x.MouseAttached.ToString();
 						//Program.Form.KeyboardHandleText = x.KeyboardAttached.ToString();
-						Program.Form.ControllerSelectedIndex = x.ControllerIndex;
+						//Program.Form.ControllerSelectedIndex = x.ControllerIndex;
 					}
 					else
 					{
 						//We have no devices attached to this window, so make sure handles display 0.
 						//Program.Form.MouseHandleText = "0";
 						//Program.Form.KeyboardHandleText = "0";
-						Program.Form.ControllerSelectedIndex = 0;
+						//Program.Form.ControllerSelectedIndex = 0;
 					}
 				}
 			}

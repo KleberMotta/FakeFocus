@@ -14,7 +14,7 @@ namespace UniversalSplitScreen.UI
 		public string WindowHandleText { get => hWndLabel.Text; set => hWndLabel.Text = value; }
 		//public string MouseHandleText { get => mouseHandleLabel.Text; set => mouseHandleLabel.Text = value; }
 		//public string KeyboardHandleText { get => keyboardHandleLabel.Text; set => keyboardHandleLabel.Text = value; }
-		public int ControllerSelectedIndex { get => ControllerIndexComboBox.SelectedIndex; set => ControllerIndexComboBox.SelectedIndex = value; }
+		//public int ControllerSelectedIndex { get => ControllerIndexComboBox.SelectedIndex; set => ControllerIndexComboBox.SelectedIndex = value; }
 
 		public ComboBox OptionsComboBox => optionsComboBox;
 
@@ -28,22 +28,22 @@ namespace UniversalSplitScreen.UI
 			startButton.Enabled = true;
 			stopButton.Enabled = false;
 
-			ControllerIndexComboBox.SelectedIndex = 0;
+			//ControllerIndexComboBox.SelectedIndex = 0;
 
 			PopulateOptionsRefTypes(Options.CurrentOptions);
 
 			Label_CurrentVersion.Text = $"Current version: {UpdateChecker.currentVersion}";
 
 			uint controllerLimit = Program.Config.ControllerLimit;
-			ControllerIndexComboBox.Items.Clear();
-			ControllerIndexComboBox.Items.Add("No controller");
+			//ControllerIndexComboBox.Items.Clear();
+			//ControllerIndexComboBox.Items.Add("No controller");
 			ComboBox_DinputControllerIndex.Items.Clear();
 			ComboBox_DinputControllerIndex.Items.Add("No controller");
 			if (controllerLimit > 0)
 			{
 				for (uint i = 1; i <= controllerLimit; i++)
 				{
-					ControllerIndexComboBox.Items.Add(i.ToString());
+					//ControllerIndexComboBox.Items.Add(i.ToString());
 					ComboBox_DinputControllerIndex.Items.Add(i.ToString());
 				}
 			}
@@ -164,14 +164,14 @@ namespace UniversalSplitScreen.UI
 
 		private void ControllerIndexComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			int index = ControllerIndexComboBox.SelectedIndex;
-			Logger.WriteLine($"Set controller index = {index}");
-			Program.SplitScreenManager?.SetControllerIndex(index);
+			//int index = ControllerIndexComboBox.SelectedIndex;
+			//Logger.WriteLine($"Set controller index = {index}");
+			//Program.SplitScreenManager?.SetControllerIndex(index);
 		}
 		#endregion
 
 		#region Option page events
-		
+
 		public void SetEndButtonText(string text)
 		{
 			endButtonSetter.Text = text;
