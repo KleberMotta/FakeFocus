@@ -474,5 +474,10 @@ namespace UniversalSplitScreen.UI
 		{
 
 		}
+
+		private void RefCheckbox_SendFakeWindowActivateMessages_CheckedChanged_1(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
