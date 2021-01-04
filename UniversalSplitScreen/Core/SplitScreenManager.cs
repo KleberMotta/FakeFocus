@@ -448,7 +448,7 @@ namespace UniversalSplitScreen.Core
 			Window window = windows[_activeHWnd];
 			window.MouseAttached = mouse;
 
-			Program.Form.MouseHandleText = mouse.ToString();
+			//Program.Form.MouseHandleText = mouse.ToString();
 
 			//if ((int)mouse == 0 && (int)window.KeyboardAttached == 0 && window.ControllerIndex == 0)
 			//if ((int)mouse == 0 && (int)window.KeyboardAttached == 0)
@@ -462,7 +462,7 @@ namespace UniversalSplitScreen.Core
 			Window window = windows[_activeHWnd];
 			window.KeyboardAttached = keyboard;
 
-			Program.Form.KeyboardHandleText = keyboard.ToString();
+			//Program.Form.KeyboardHandleText = keyboard.ToString();
 
 			//if ((int)keyboard == 0 && (int)window.MouseAttached == 0 && window.ControllerIndex == 0)
 			//if ((int)keyboard == 0 && (int)window.MouseAttached == 0)
@@ -484,8 +484,8 @@ namespace UniversalSplitScreen.Core
 		public void ResetAllHandles()
 		{
 			windows.Clear();
-			Program.Form.MouseHandleText = "0";
-			Program.Form.KeyboardHandleText = "0";
+			//Program.Form.MouseHandleText = "0";
+			//Program.Form.KeyboardHandleText = "0";
 			Program.Form.ControllerSelectedIndex = 0;
 		}
 		#endregion
@@ -647,15 +647,15 @@ namespace UniversalSplitScreen.Core
 					if (windows.TryGetValue(hWnd, out Window x))
 					{
 						//We have devices attached to this window, so display the handles.
-						Program.Form.MouseHandleText = x.MouseAttached.ToString();
-						Program.Form.KeyboardHandleText = x.KeyboardAttached.ToString();
+						//Program.Form.MouseHandleText = x.MouseAttached.ToString();
+						//Program.Form.KeyboardHandleText = x.KeyboardAttached.ToString();
 						Program.Form.ControllerSelectedIndex = x.ControllerIndex;
 					}
 					else
 					{
 						//We have no devices attached to this window, so make sure handles display 0.
-						Program.Form.MouseHandleText = "0";
-						Program.Form.KeyboardHandleText = "0";
+						//Program.Form.MouseHandleText = "0";
+						//Program.Form.KeyboardHandleText = "0";
 						Program.Form.ControllerSelectedIndex = 0;
 					}
 				}

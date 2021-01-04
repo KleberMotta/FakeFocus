@@ -12,8 +12,8 @@ namespace UniversalSplitScreen.UI
 
 		public string WindowTitleText { get => windowTitleLabel.Text; set => windowTitleLabel.Text = value; }
 		public string WindowHandleText { get => hWndLabel.Text; set => hWndLabel.Text = value; }
-		public string MouseHandleText { get => mouseHandleLabel.Text; set => mouseHandleLabel.Text = value; }
-		public string KeyboardHandleText { get => keyboardHandleLabel.Text; set => keyboardHandleLabel.Text = value; }
+		//public string MouseHandleText { get => mouseHandleLabel.Text; set => mouseHandleLabel.Text = value; }
+		//public string KeyboardHandleText { get => keyboardHandleLabel.Text; set => keyboardHandleLabel.Text = value; }
 		public int ControllerSelectedIndex { get => ControllerIndexComboBox.SelectedIndex; set => ControllerIndexComboBox.SelectedIndex = value; }
 
 		public ComboBox OptionsComboBox => optionsComboBox;
@@ -106,7 +106,7 @@ namespace UniversalSplitScreen.UI
 			RefTextbox_AutofillHandleName.RefType = handleNameRef;
 			if (!string.IsNullOrEmpty(handleNameRef))
 			{
-				textBoxHandleName.Text = handleNameRef;
+				//textBoxHandleName.Text = handleNameRef;
 				StartupHook_MutexTargets.Text = handleNameRef;
 			}
 		}
@@ -130,7 +130,7 @@ namespace UniversalSplitScreen.UI
 
 		private void keyboardSetTextbox_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			keyboardSetTextbox.Clear();
+			//keyboardSetTextbox.Clear();
 			Logger.WriteLine($"Set keyboard, pointer = {Program.MessageProcessor.LastKeyboardPressed}");
 			Program.SplitScreenManager.SetKeyboardHandle(Program.MessageProcessor.LastKeyboardPressed);
 		}
@@ -265,13 +265,13 @@ namespace UniversalSplitScreen.UI
 			UpdateChecker.CheckUpdateDialog(true);
 		}
 
-		private void UnlockHandleButton_Click(object sender, EventArgs e)
-		{
-			if (string.IsNullOrEmpty(textBoxHandleName.Text))
-				MessageBox.Show("Handle name cannot be empty.", "Error");
-			else
-				Program.SplitScreenManager.UnlockHandle(textBoxHandleName.Text);
-		}
+		//private void UnlockHandleButton_Click(object sender, EventArgs e)
+		//{
+		//	if (string.IsNullOrEmpty(textBoxHandleName.Text))
+		//		MessageBox.Show("Handle name cannot be empty.", "Error");
+		//	else
+		//		Program.SplitScreenManager.UnlockHandle(textBoxHandleName.Text);
+		//}
 
 		private void Button_BrowseFindWindowHookExe_Click(object sender, EventArgs e)
 		{
