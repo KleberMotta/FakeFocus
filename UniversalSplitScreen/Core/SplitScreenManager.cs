@@ -30,9 +30,6 @@ namespace UniversalSplitScreen.Core
 
 		readonly Dictionary<Task, CancellationTokenSource> _setFocusTasks = new Dictionary<Task, CancellationTokenSource>();
 
-		//Sometimes the game can be focused, which can break input. Fix: every X seconds, focus the desktop
-		(Task, CancellationTokenSource) _autoUnfocusTask;
-
 		IntPtr _activeHWnd = IntPtr.Zero;//Excludes self
 		IntPtr _desktopHWnd = IntPtr.Zero;
 
@@ -83,6 +80,7 @@ namespace UniversalSplitScreen.Core
 		/// </summary>
 		public void ActivateSplitScreen()
 		{
+
 			#region XInput/DInput warnings
 			bool needXinputHook = false;
 			bool needDinputTranslationHook = false;
@@ -96,15 +94,15 @@ namespace UniversalSplitScreen.Core
 			}
 
 			if (needXinputHook &&
-			    MessageBox.Show(
-				    @"You need to enable the XInput hook to use controllers. Do you want to continue anyway?", @"Warning",
-				    MessageBoxButtons.YesNo) != DialogResult.Yes)
+				MessageBox.Show(
+						@"You need to enable the XInput hook to use controllers. Do you want to continue anyway?", @"Warning",
+						MessageBoxButtons.YesNo) != DialogResult.Yes)
 				return;
 
 			if (needDinputTranslationHook &&
-			    MessageBox.Show(
-				    @"You need to enable the XInput hook and the DInput to XInput translation hook to use more than 4 controllers. Do you want to continue anyway?", @"Warning",
-				    MessageBoxButtons.YesNo) != DialogResult.Yes)
+				MessageBox.Show(
+						@"You need to enable the XInput hook and the DInput to XInput translation hook to use more than 4 controllers. Do you want to continue anyway?", @"Warning",
+						MessageBoxButtons.YesNo) != DialogResult.Yes)
 				return;
 			#endregion
 
@@ -191,7 +189,6 @@ namespace UniversalSplitScreen.Core
 					options.Hook_MouseVisibility)
 				{
 
-
 					//bool needPipe = options.Hook_GetCursorPos || options.Hook_GetAsyncKeyState || options.Hook_GetKeyState;
 					bool needWritePipe = options.Hook_MouseVisibility;
 					var pipe = new NamedPipe(hWnd, window, needWritePipe);
@@ -269,41 +266,20 @@ namespace UniversalSplitScreen.Core
 					}
 				}
 			}
-
-			//Auto unfocus task
-			{
-				var c = new CancellationTokenSource();
-				var task = new Task(() => AutoUnfocusTask(c.Token), c.Token);
-				task.Start();
-				_autoUnfocusTask = (task, c);
-			}
 			
-			IsRunningInSplitScreen = true;
-			InputDisabler.Lock();
-			Intercept.InterceptEnabled = true;
+			IsRunningInSplitScreen = true; 
 			_deviceToWindows.Clear();
-			InitDeviceToWindows();
+			InitDeviceToWindows(); // Not sure what this does, but it's def necessary 
 
-			// Games like Rift won't work correctly if the system mouse button is on the top left, so we move it to the middle of the screen
-			if(Options.CurrentOptions.SystemMouseToMiddle)
-			{
-				// TODO make the position configurable
-				int middleX = (int) (Screen.PrimaryScreen.Bounds.Width * 0.5f);
-				int middleY = (int) (Screen.PrimaryScreen.Bounds.Height * 0.5f);
-				Cursor.Position = new System.Drawing.Point(middleX, middleY);
-			}
-			else
-			{
-				Cursor.Position = new System.Drawing.Point(0, 0);
-			}
+			//InputDisabler.Unlock();
 
 			WinApi.SetForegroundWindow((int)WinApi.GetDesktopWindow());//Loses focus of all windows, without minimizing
 			Program.Form.WindowState = FormWindowState.Minimized;
-
 			Program.Form.OnSplitScreenStart();
+
 		}
 		
-		public void DeactivateSplitScreen()
+		public void DeactivateSplitScreen() // DeactivateForcusFaker
 		{
 			IsRunningInSplitScreen = false;
 			InputDisabler.Unlock();
@@ -312,7 +288,7 @@ namespace UniversalSplitScreen.Core
 			foreach (var thread in _setFocusTasks)
 				thread.Value.Cancel();
 			
-			_autoUnfocusTask.Item2?.Cancel();
+			//_autoUnfocusTask.Item2?.Cancel();
 
 			foreach (Window window in windows.Values.ToArray())
 			{
@@ -324,6 +300,8 @@ namespace UniversalSplitScreen.Core
 
 			Program.Form.OnSplitScreenEnd();
 			Program.Form.WindowState = FormWindowState.Normal;
+
+
 		}
 
 		private const string HandleSeparator = "&&&&&";
@@ -472,8 +450,9 @@ namespace UniversalSplitScreen.Core
 
 			Program.Form.MouseHandleText = mouse.ToString();
 
-			if ((int)mouse == 0 && (int)window.KeyboardAttached == 0 && window.ControllerIndex == 0)
-				windows.Remove(_activeHWnd);
+			//if ((int)mouse == 0 && (int)window.KeyboardAttached == 0 && window.ControllerIndex == 0)
+			//if ((int)mouse == 0 && (int)window.KeyboardAttached == 0)
+			//	windows.Remove(_activeHWnd);
 		}
 
 		public void SetKeyboardHandle(IntPtr keyboard)
@@ -485,8 +464,9 @@ namespace UniversalSplitScreen.Core
 
 			Program.Form.KeyboardHandleText = keyboard.ToString();
 
-			if ((int)keyboard == 0 && (int)window.MouseAttached == 0 && window.ControllerIndex == 0)
-				windows.Remove(_activeHWnd);
+			//if ((int)keyboard == 0 && (int)window.MouseAttached == 0 && window.ControllerIndex == 0)
+			//if ((int)keyboard == 0 && (int)window.MouseAttached == 0)
+			//	windows.Remove(_activeHWnd);
 		}
 
 		public void SetControllerIndex(int index)
@@ -496,8 +476,9 @@ namespace UniversalSplitScreen.Core
 			Window window = windows[_activeHWnd];
 			window.ControllerIndex = index;
 
-			if ((int)window.KeyboardAttached == 0 && (int)window.MouseAttached == 0 && window.ControllerIndex == 0)
-				windows.Remove(_activeHWnd);
+			//if ((int)window.KeyboardAttached == 0 && (int)window.MouseAttached == 0 && window.ControllerIndex == 0)
+			//if ((int)window.KeyboardAttached == 0 && (int)window.MouseAttached == 0)
+			//		windows.Remove(_activeHWnd);
 		}
 
 		public void ResetAllHandles()
@@ -535,39 +516,17 @@ namespace UniversalSplitScreen.Core
 					return;
 
 			}
-		}
+		} 
 
 		private static void SendWindowActivateMessage(IntPtr hWnd)
 		{
-			SendInput.WinApi.PostMessageA(hWnd, (uint)SendMessageTypes.WM_ACTIVATE, (IntPtr)2, (IntPtr)null);//2 or 1?
+			SendInput.WinApi.PostMessageA(hWnd, (uint)SendMessageTypes.WM_ACTIVATE, (IntPtr)2, (IntPtr)null);
+			SendInput.WinApi.PostMessageA(hWnd, (uint)SendMessageTypes.WM_NCACTIVATE, (IntPtr)1, IntPtr.Zero);//To prevent focus change when alt-tab
 			SendInput.WinApi.PostMessageA(hWnd, (uint)SendMessageTypes.WM_ACTIVATEAPP, (IntPtr)1, IntPtr.Zero);
 			SendInput.WinApi.PostMessageA(hWnd, (uint)SendMessageTypes.WM_NCACTIVATE, (IntPtr)0, IntPtr.Zero);//Title bar will be redrawn as if focused if wParam == 1
 			SendInput.WinApi.PostMessageA(hWnd, (uint)SendMessageTypes.WM_MOUSEACTIVATE, (IntPtr)hWnd, (IntPtr)1);//Title bar will be redrawn as if focused if wParam == 1
 		}
 
-		/// <summary>
-		/// Periodically sets the foreground window to the desktop.
-		/// Windows will do nothing unless we are the foreground window, so this isn't particularly useful.
-		/// HooksCPP will automatically set the desktop to foreground if a game brings itself to the foreground.
-		/// </summary>
-		/// <param name="token"></param>
-		private void AutoUnfocusTask(CancellationToken token)
-		{
-			while (true)
-			{
-				WinApi.SetForegroundWindow((int)WinApi.GetDesktopWindow());
-
-				foreach (Window window in windows.Values)
-				{
-					window.HooksCPPNamedPipe?.WriteMessage(0x05, 0, 0);
-				}
-
-				if (token.IsCancellationRequested)
-					return;
-
-				Thread.Sleep(3000);
-			}
-		}
 		#endregion
 
 		/// <summary>
@@ -707,7 +666,8 @@ namespace UniversalSplitScreen.Core
 				if (ourHWnd == hWnd)
 					InputDisabler.Unlock();
 				else
-					InputDisabler.Lock();
+					//InputDisabler.Lock();
+					InputDisabler.Unlock();
 			}
 		}
 	}

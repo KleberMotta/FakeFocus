@@ -283,8 +283,8 @@ typedef struct _XINPUT_GAMEPAD_EX {
 DWORD packetNumber = 0;
 inline DWORD WINAPI XInputGetState_Inline(DWORD dwUserIndex, XINPUT_STATE* pState, bool extended)
 {
-	if (controller_index == 0) // user wants no controller on this game
-		return ERROR_DEVICE_NOT_CONNECTED;
+	//if (controller_index == 0) // user wants no controller on this game
+	//	return ERROR_DEVICE_NOT_CONNECTED;
 		
 	if (!HookDinput)
 	{
@@ -363,8 +363,8 @@ DWORD WINAPI XInputGetStateEx_Hook(DWORD dwUserIndex, XINPUT_STATE* pState)
 
 DWORD WINAPI XInputSetState_Hook(DWORD dwUserIndex, XINPUT_VIBRATION* pVibration)
 {
-	if (controller_index == 0)
-		return ERROR_DEVICE_NOT_CONNECTED;
+	//if (controller_index == 0)
+	//	return ERROR_DEVICE_NOT_CONNECTED;
 
 	if (controller_index <= 4)
 		return XInputSetState(controller_index - 1, pVibration);
@@ -374,8 +374,8 @@ DWORD WINAPI XInputSetState_Hook(DWORD dwUserIndex, XINPUT_VIBRATION* pVibration
 
 DWORD WINAPI XInputGetCapabilities_Hook(DWORD dwUserIndex, DWORD dwFlags, XINPUT_CAPABILITIES *pCapabilities)
 {
-	if (controller_index == 0) // user wants no controller on this game
-		return ERROR_DEVICE_NOT_CONNECTED;
+	//if (controller_index == 0) // user wants no controller on this game
+	//	return ERROR_DEVICE_NOT_CONNECTED;
 
 	if (controller_index <= 4)
 		return XInputGetCapabilities(controller_index - 1, dwFlags, pCapabilities);
@@ -1337,58 +1337,58 @@ extern "C" __declspec(dllexport) void __stdcall NativeInjectionEntryPoint(REMOTE
 				p_dinput->EnumDevices(DI8DEVCLASS_ALL, DIEnumDevicesCallback, nullptr, DIEDFL_ALLDEVICES);
 				//std::qsort(dinputGuids, maxDinputDevices, sizeof(GUID), compareGuids);
 
-				if (controller_index == 0)
-				{
-					dinput_block_input = true;
-					controller_guid = dinput_guids[controller_index - 1];
-					if (DI_OK == p_dinput->CreateDevice(controller_guid, &dinput_device, nullptr))
-					{
-						//installDinputHooks();
-					}
-				}
-				else if (!(controller_index <= max_dinput_devices && controller_index <= dinputGuids_i))
-				{
-					std::cerr << "Not selecting dinput controller because controllerIndex out of range" << endl;
-					MessageBox(nullptr, "Not selecting dinput controller because controllerIndex out of range", nullptr,
-					           MB_OK);
-				}
-				else
-				{
-					controller_guid = dinput_guids[controller_index - 1];
-					std::cout << "cg8=" << controller_guid.Data1 << "\n";
-					HRESULT cdRes = p_dinput->CreateDevice(controller_guid, &dinput_device, nullptr);
+				//if (controller_index == 0)
+				//{
+				//	dinput_block_input = true;
+				//	controller_guid = dinput_guids[controller_index - 1];
+				//	if (DI_OK == p_dinput->CreateDevice(controller_guid, &dinput_device, nullptr))
+				//	{
+				//		//installDinputHooks();
+				//	}
+				//}
+				//else if (!(controller_index <= max_dinput_devices && controller_index <= dinputGuids_i))
+				//{
+				//	std::cerr << "Not selecting dinput controller because controllerIndex out of range" << endl;
+				//	MessageBox(nullptr, "Not selecting dinput controller because controllerIndex out of range", nullptr,
+				//	           MB_OK);
+				//}
+				//else
+				//{
+				//	controller_guid = dinput_guids[controller_index - 1];
+				//	std::cout << "cg8=" << controller_guid.Data1 << "\n";
+				//	HRESULT cdRes = p_dinput->CreateDevice(controller_guid, &dinput_device, nullptr);
 
-					if (cdRes != DI_OK)
-					{
-						std::cerr << "dinput create device error: " << cdRes << endl;
-					}
-					else
-					{
-						//Dinput8 hook
-						//installDinputHooks();
+				//	if (cdRes != DI_OK)
+				//	{
+				//		std::cerr << "dinput create device error: " << cdRes << endl;
+				//	}
+				//	else
+				//	{
+				//		//Dinput8 hook
+				//		//installDinputHooks();
 
-						dinput_device->SetCooperativeLevel(hWnd, DISCL_BACKGROUND | DISCL_NONEXCLUSIVE);
+				//		dinput_device->SetCooperativeLevel(hWnd, DISCL_BACKGROUND | DISCL_NONEXCLUSIVE);
 
-						dinput_device->SetDataFormat(&c_dfDIJoystick2);
-						dinput_device_data_format = 2;
+				//		dinput_device->SetDataFormat(&c_dfDIJoystick2);
+				//		dinput_device_data_format = 2;
 
-						DIDEVCAPS caps;
-						caps.dwSize = sizeof(DIDEVCAPS);
-						HRESULT gcRes = dinput_device->GetCapabilities(&caps);
+				//		DIDEVCAPS caps;
+				//		caps.dwSize = sizeof(DIDEVCAPS);
+				//		HRESULT gcRes = dinput_device->GetCapabilities(&caps);
 
-						std::cout << "dinput device number of buttons = " << caps.dwButtons << "\n";
-						std::cout << "dinput device number of axes = " << caps.dwAxes << "\n";
+				//		std::cout << "dinput device number of buttons = " << caps.dwButtons << "\n";
+				//		std::cout << "dinput device number of axes = " << caps.dwAxes << "\n";
 
-						dinput_device->EnumObjects(&DIEnumDeviceObjectsCallback, dinput_device, DIDFT_AXIS);
+				//		dinput_device->EnumObjects(&DIEnumDeviceObjectsCallback, dinput_device, DIDFT_AXIS);
 
-						HRESULT aquireResult = dinput_device->Acquire();
+				//		HRESULT aquireResult = dinput_device->Acquire();
 
-						if (aquireResult == DI_OK)
-							std::cout << "Successfully aquired dinput device\n";
-						else
-							std::cout << "Failed to aquired dinput device\n";
-					}
-				}
+				//		if (aquireResult == DI_OK)
+				//			std::cout << "Successfully aquired dinput device\n";
+				//		else
+				//			std::cout << "Failed to aquired dinput device\n";
+				//	}
+				//}
 			}
 		}
 

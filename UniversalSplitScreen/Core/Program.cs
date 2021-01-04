@@ -45,8 +45,8 @@ namespace UniversalSplitScreen
 
 			i = new Intercept();
 			var x = new RawInputManager(Form_hWnd);
-			
-			InputDisabler.Init();
+
+			//InputDisabler.Init();
 
 			Application.Run(Form);//Not required for RegisterRawInputDevices to work
 

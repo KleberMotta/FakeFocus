@@ -79,18 +79,18 @@ namespace UniversalSplitScreen.SendInput
 
 			int vk = kb.vkCode;
 
-			if ((vk == 0x09 || vk == 0x1B) //tab or escape
-			    && (kb.flags & 0b100000) != 0)//is alt down
-			{
-				return (IntPtr)1;//alt+tab and alt+esc will change foreground window.
-			}
+			//if ((vk == 0x09 || vk == 0x1B) //tab or escape
+			//    && (kb.flags & 0b100000) != 0)//is alt down
+			//{
+			//	return (IntPtr)1;//alt+tab and alt+esc will change foreground window.
+			//}
 
-			for (ushort i = 0; i < bannedVkeysList.Length; i++)
-			{
-				ushort bvk = bannedVkeysList[i];
-				if (bvk == vk) return (IntPtr)1;
-				else if (vk > bvk) break;
-			}
+			//for (ushort i = 0; i < bannedVkeysList.Length; i++)
+			//{
+			//	ushort bvk = bannedVkeysList[i];
+			//	if (bvk == vk) return (IntPtr)1;
+			//	else if (vk > bvk) break;
+			//}
 
 			//Ctrl+esc
 			if (vk == 0x1B && GetAsyncKeyState(0x11) != 0)
