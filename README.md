@@ -1,3 +1,9 @@
+# Fake Focus
+
+First of all, this program is only an adaptation of the amazing Universal Split Screen project that allows offline multiplayer with split-screen. 
+
+Fake Focus was created to help anyone who may want to keep its games running in the background without mute sound or input problems, whatever the reason. I hope this can help people as much as it helped me, and big tanks for Ilyaki and anyone who contributed to the creation of Universal Split Screen!!!
+
 # UniversalSplitScreen
 Split screen multiplayer for any game with multiple keyboards, mice and controllers.
 https://universalsplitscreen.github.io/
